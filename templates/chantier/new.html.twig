@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Chantier{% endblock %}
+{% block title %}Créer un Chantier{% endblock %}
 
 {% block body %}
-    <h1>Create new Chantier</h1>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🏗️ Ajouter un Nouveau Chantier</h2>
 
-    {{ include('chantier/_form.html.twig') }}
+    <div class="card shadow-lg border-0">
+        <div class="card-body">
+            {{ include('chantier/_form.html.twig', {'button_label': 'Créer'}) }}
+        </div>
+    </div>
 
-    <a href="{{ path('app_chantier_index') }}">back to list</a>
+    <div class="mt-4 text-center">
+        <a href="{{ path('app_chantier_index') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Retour à la liste
+        </a>
+    </div>
+</div>
 {% endblock %}
