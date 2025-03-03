@@ -47,4 +47,106 @@ class Chantier
     public function getId(): ?int { return $this->id; }
     public function getNom(): ?string { return $this->nom; }
     public function setNom(string $nom): static { $this->nom = $nom; return $this; }
+
+    public function getChantierPrerequis(): ?string
+    {
+        return $this->chantier_prerequis;
+    }
+
+    public function setChantierPrerequis(?string $chantier_prerequis): static
+    {
+        $this->chantier_prerequis = $chantier_prerequis;
+
+        return $this;
+    }
+
+    public function getEffectifRequis(): ?int
+    {
+        return $this->effectif_requis;
+    }
+
+    public function setEffectifRequis(int $effectif_requis): static
+    {
+        $this->effectif_requis = $effectif_requis;
+
+        return $this;
+    }
+
+    public function getDateDebut(): ?\DateTimeInterface
+    {
+        return $this->date_debut;
+    }
+
+    public function setDateDebut(\DateTimeInterface $date_debut): static
+    {
+        $this->date_debut = $date_debut;
+
+        return $this;
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->date_fin;
+    }
+
+    public function setDateFin(\DateTimeInterface $date_fin): static
+    {
+        $this->date_fin = $date_fin;
+
+        return $this;
+    }
+
+    public function getChefChantier(): ?Ouvrier
+    {
+        return $this->chef_chantier;
+    }
+
+    public function setChefChantier(?Ouvrier $chef_chantier): static
+    {
+        $this->chef_chantier = $chef_chantier;
+
+        return $this;
+    }
+
+    public function getEquipe(): ?Equipe
+    {
+        return $this->equipe;
+    }
+
+    public function setEquipe(?Equipe $equipe): static
+    {
+        $this->equipe = $equipe;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Affectation>
+     */
+    public function getAffectations(): Collection
+    {
+        return $this->affectations;
+    }
+
+    public function addAffectation(Affectation $affectation): static
+    {
+        if (!$this->affectations->contains($affectation)) {
+            $this->affectations->add($affectation);
+            $affectation->setChantier($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAffectation(Affectation $affectation): static
+    {
+        if ($this->affectations->removeElement($affectation)) {
+            // set the owning side to null (unless already changed)
+            if ($affectation->getChantier() === $this) {
+                $affectation->setChantier(null);
+            }
+        }
+
+        return $this;
+    }
 }

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chantier{% endblock %}
+
+{% block body %}
+    <h1>Chantier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chantier.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ chantier.nom }}</td>
+            </tr>
+            <tr>
+                <th>Chantier_prerequis</th>
+                <td>{{ chantier.chantierPrerequis }}</td>
+            </tr>
+            <tr>
+                <th>Effectif_requis</th>
+                <td>{{ chantier.effectifRequis }}</td>
+            </tr>
+            <tr>
+                <th>Date_debut</th>
+                <td>{{ chantier.dateDebut ? chantier.dateDebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date_fin</th>
+                <td>{{ chantier.dateFin ? chantier.dateFin|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_chantier_index') }}">back to list</a>
+
+    <a href="{{ path('app_chantier_edit', {'id': chantier.id}) }}">edit</a>
+
+    {{ include('chantier/_delete_form.html.twig') }}
+{% endblock %}
