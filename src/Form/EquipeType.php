@@ -17,7 +17,6 @@ class EquipeType extends AbstractType
             ->add('nom_equipe')
             ->add('competance_equipe')
             ->add('nombre')
-            ->add('planning_equipe')
             ->add('chef_equipe', EntityType::class, [
                 'class' => Ouvrier::class,
                 'choice_label' => 'id',
