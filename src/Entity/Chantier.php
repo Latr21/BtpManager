@@ -42,6 +42,9 @@ class Chantier
     #[ORM\OneToMany(mappedBy: 'chantier', targetEntity: Affectation::class, orphanRemoval: true)]
     private Collection $affectations;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
+
     public function __construct() { $this->affectations = new ArrayCollection(); }
 
     public function getId(): ?int { return $this->id; }
@@ -148,4 +151,15 @@ class Chantier
         return $this;
     }
 
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
 }

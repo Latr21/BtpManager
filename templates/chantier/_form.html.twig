@@ -1,4 +1,25 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}
+    <div class="mb-3">
+        {{ form_label(form.nom, 'Nom du Chantier') }}
+        {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Ex: Construction immeuble'}}) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.effectif_requis, 'Effectif Requis') }}
+        {{ form_widget(form.effectif_requis, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.date_debut, 'Date de Début') }}
+        {{ form_widget(form.date_debut, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.date_fin, 'Date de Fin') }}
+        {{ form_widget(form.date_fin, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        <i class="fas fa-save"></i> {{ button_label|default('Enregistrer') }}
+    </button>
 {{ form_end(form) }}
