@@ -18,10 +18,8 @@ class AffectationType extends AbstractType
             ->add('date_affectation', null, [
                 'widget' => 'single_text',
             ])
-            ->add('ouvrier', EntityType::class, [
-                'class' => Ouvrier::class,
-                'choice_label' => 'id',
-            ])
+            
+            
             ->add('chantier', EntityType::class, [
                 'class' => Chantier::class,
                 'choice_label' => 'id',
