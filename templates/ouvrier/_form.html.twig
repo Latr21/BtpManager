@@ -1,4 +1,32 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire Ouvrier{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="page-title">{{ button_label|default('Créer') }} un Ouvrier</h1>
+
+        {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.nom_ouvrier) }}
+                {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.competance) }}
+                {{ form_widget(form.competance, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.role) }}
+                {{ form_widget(form.role, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.planning) }}
+                {{ form_widget(form.planning, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_ouvrier_index') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+    </div>
+{% endblock %}
