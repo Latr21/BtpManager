@@ -12,7 +12,6 @@
                 <th>Nom_equipe</th>
                 <th>Competance_equipe</th>
                 <th>Nombre</th>
-                <th>Planning_equipe</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,7 +22,6 @@
                 <td>{{ equipe.nomEquipe }}</td>
                 <td>{{ equipe.competanceEquipe }}</td>
                 <td>{{ equipe.nombre }}</td>
-                <td>{{ equipe.planningEquipe }}</td>
                 <td>
                     <a href="{{ path('app_equipe_show', {'id': equipe.id}) }}">show</a>
                     <a href="{{ path('app_equipe_edit', {'id': equipe.id}) }}">edit</a>
