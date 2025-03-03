@@ -162,16 +162,4 @@ class Chantier
 
         return $this;
     }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): static
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 }

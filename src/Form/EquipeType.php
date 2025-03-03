@@ -29,7 +29,7 @@ class EquipeType extends AbstractType
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('o')
                         ->where('o.role = :role')
-                        ->setParameter('role', 'Chef d\'équipe');
+                        ->setParameter('role', 'Chef');
                 },
                 'placeholder' => 'Sélectionnez un chef d\'équipe',
             ])
