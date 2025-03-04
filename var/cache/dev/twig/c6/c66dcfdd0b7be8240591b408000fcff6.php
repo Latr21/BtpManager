@@ -89,27 +89,43 @@ class __TwigTemplate_6663503f3323ed0c9ec6197d87ab99fe extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["affectation"]) {
             // line 7
             yield "        <div class=\"card shadow-lg border-0\">
-            <div class=\"card-body\">
+        ";
+            // line 8
+            if (CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "chantier", [], "any", false, false, false, 8), "image", [], "any", false, false, false, 8)) {
+                // line 9
+                yield "            <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "chantier", [], "any", false, false, false, 9), "image", [], "any", false, false, false, 9))), "html", null, true);
+                yield "\" class=\"card-img-top\" alt=\"Image du Chantier\">
+        ";
+            } else {
+                // line 11
+                yield "            <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/images/default-placeholder.png"), "html", null, true);
+                yield "\" class=\"card-img-top\" alt=\"Pas d'image\">
+        ";
+            }
+            // line 13
+            yield "            <div class=\"card-body\">
                 <h4 class=\"card-title text-primary\">";
-            // line 9
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "nom", [], "any", false, false, false, 9), "html", null, true);
+            // line 14
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "nom", [], "any", false, false, false, 14), "html", null, true);
             yield "</h4>
                 <ul class=\"list-group list-group-flush\">
                     <li class=\"list-group-item\"><strong>Equipe :</strong> ";
-            // line 11
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "equipe", [], "any", false, false, false, 11), "nomEquipe", [], "any", false, false, false, 11), "html", null, true);
+            // line 16
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "equipe", [], "any", false, false, false, 16), "nomEquipe", [], "any", false, false, false, 16), "html", null, true);
             yield "</li>
                     <li class=\"list-group-item\"><strong>Chantier :</strong> ";
-            // line 12
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "chantier", [], "any", false, false, false, 12), "nom", [], "any", false, false, false, 12), "html", null, true);
+            // line 17
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "chantier", [], "any", false, false, false, 17), "nom", [], "any", false, false, false, 17), "html", null, true);
             yield "</li>
                     <li class=\"list-group-item\"><strong>Date de Début :</strong> ";
-            // line 13
-            yield ((CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateDebut", [], "any", false, false, false, 13)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateDebut", [], "any", false, false, false, 13), "d/m/Y"), "html", null, true)) : ("-"));
+            // line 18
+            yield ((CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateDebut", [], "any", false, false, false, 18)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateDebut", [], "any", false, false, false, 18), "d/m/Y"), "html", null, true)) : ("-"));
             yield "</li>
                     <li class=\"list-group-item\"><strong>Date de Fin :</strong> ";
-            // line 14
-            yield ((CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateFin", [], "any", false, false, false, 14)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateFin", [], "any", false, false, false, 14), "d/m/Y"), "html", null, true)) : ("-"));
+            // line 19
+            yield ((CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateFin", [], "any", false, false, false, 19)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "dateFin", [], "any", false, false, false, 19), "d/m/Y"), "html", null, true)) : ("-"));
             yield "</li>
                 </ul>
             </div>
@@ -117,20 +133,20 @@ class __TwigTemplate_6663503f3323ed0c9ec6197d87ab99fe extends Template
 
         <div class=\"mt-4 text-center\">
             <a href=\"";
-            // line 20
+            // line 25
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_index");
             yield "\" class=\"btn btn-secondary\">
                 <i class=\"fas fa-arrow-left\"></i> Retour à la liste
             </a>
             <a href=\"";
-            // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+            // line 28
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             yield "\" class=\"btn btn-warning\">
                 <i class=\"fas fa-eye\"></i> Show
             </a>
             <a href=\"";
-            // line 26
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["affectation"], "id", [], "any", false, false, false, 31)]), "html", null, true);
             yield "\" class=\"btn btn-warning\">
                 <i class=\"fas fa-edit\"></i> Modifier
             </a>
@@ -138,19 +154,19 @@ class __TwigTemplate_6663503f3323ed0c9ec6197d87ab99fe extends Template
     ";
             $context['_iterated'] = true;
         }
-        // line 30
+        // line 35
         if (!$context['_iterated']) {
-            // line 31
+            // line 36
             yield "        <div class=\"alert alert-warning\">No records found</div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['affectation'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 38
         yield "
     <a href=\"";
-        // line 34
+        // line 39
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_new");
         yield "\" class=\"btn btn-primary\">Create new</a>
 ";
@@ -181,7 +197,7 @@ class __TwigTemplate_6663503f3323ed0c9ec6197d87ab99fe extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  154 => 34,  151 => 33,  144 => 31,  142 => 30,  133 => 26,  127 => 23,  121 => 20,  112 => 14,  108 => 13,  104 => 12,  100 => 11,  95 => 9,  91 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  170 => 39,  167 => 38,  160 => 36,  158 => 35,  149 => 31,  143 => 28,  137 => 25,  128 => 19,  124 => 18,  120 => 17,  116 => 16,  111 => 14,  108 => 13,  102 => 11,  96 => 9,  94 => 8,  91 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -193,6 +209,11 @@ class __TwigTemplate_6663503f3323ed0c9ec6197d87ab99fe extends Template
 {% block body %}
     {% for affectation in affectations %}
         <div class=\"card shadow-lg border-0\">
+        {% if affectation.chantier.image %}
+            <img src=\"{{ asset('uploads/images/' ~ affectation.chantier.image) }}\" class=\"card-img-top\" alt=\"Image du Chantier\">
+        {% else %}
+            <img src=\"{{ asset('uploads/images/default-placeholder.png') }}\" class=\"card-img-top\" alt=\"Pas d'image\">
+        {% endif %}
             <div class=\"card-body\">
                 <h4 class=\"card-title text-primary\">{{ affectation.nom }}</h4>
                 <ul class=\"list-group list-group-flush\">
