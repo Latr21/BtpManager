@@ -9,7 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/ouvrier')]
 final class OuvrierController extends AbstractController
@@ -71,11 +71,15 @@ final class OuvrierController extends AbstractController
     #[Route('/{id}', name: 'app_ouvrier_delete', methods: ['POST'])]
     public function delete(Request $request, Ouvrier $ouvrier, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$ouvrier->getId(), $request->getPayload()->getString('_token'))) {
+        // Vérification du token CSRF
+        if ($this->isCsrfTokenValid('delete' . $ouvrier->getId(), $request->request->get('_token'))) {
+            // Suppression de l'ouvrier
             $entityManager->remove($ouvrier);
             $entityManager->flush();
         }
-
+    
+        // Redirection après suppression
         return $this->redirectToRoute('app_ouvrier_index', [], Response::HTTP_SEE_OTHER);
     }
+    
 }

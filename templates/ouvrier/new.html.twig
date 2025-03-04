@@ -1,11 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Ouvrier{% endblock %}
+{% block title %}Créer un Nouvel Ouvrier{% endblock %}
 
 {% block body %}
-    <h1>Create new Ouvrier</h1>
+    <div class="container">
+        <h1 class="my-4">Créer un Nouvel Ouvrier</h1>
 
-    {{ include('ouvrier/_form.html.twig') }}
+        {{ form_start(form) }}
+            <div class="mb-3">
+                {{ form_label(form.nom_ouvrier) }}
+                {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le nom de l\'ouvrier'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.competance) }}
+                {{ form_widget(form.competance, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.role) }}
+                {{ form_widget(form.role, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.planning) }}
+                {{ form_widget(form.planning, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le planning'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.equipe) }}
+                {{ form_widget(form.equipe, {'attr': {'class': 'form-control'}}) }}
+            </div>
 
-    <a href="{{ path('app_ouvrier_index') }}">back to list</a>
+            <button type="submit" class="btn btn-success">{{ button_label|default('Créer') }}</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_ouvrier_index') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+    </div>
 {% endblock %}
