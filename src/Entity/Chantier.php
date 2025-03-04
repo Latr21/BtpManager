@@ -141,12 +141,11 @@ class Chantier
     public function removeAffectation(Affectation $affectation): static
     {
         if ($this->affectations->removeElement($affectation)) {
-            // set the owning side to null (unless already changed)
             if ($affectation->getChantier() === $this) {
                 $affectation->setChantier(null);
             }
         }
-
         return $this;
     }
+
 }
