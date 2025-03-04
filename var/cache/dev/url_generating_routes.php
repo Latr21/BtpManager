@@ -24,6 +24,9 @@ return [
     'app_ouvrier_show' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
     'app_ouvrier_edit' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
     'app_ouvrier_delete' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\AffectationController::index' => [[], ['_controller' => 'App\\Controller\\AffectationController::index'], [], [['text', '/affectation']], [], [], []],
     'App\Controller\AffectationController::new' => [[], ['_controller' => 'App\\Controller\\AffectationController::new'], [], [['text', '/affectation/new']], [], [], []],
     'App\Controller\AffectationController::show' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],
@@ -44,4 +47,7 @@ return [
     'App\Controller\OuvrierController::show' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
     'App\Controller\OuvrierController::edit' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
     'App\Controller\OuvrierController::delete' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
+    'App\Controller\RegistrationController::register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
 ];
