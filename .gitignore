@@ -1,46 +1,31 @@
-### Ignorer les dépendances ###
-/vendor/
+# Ignore les fichiers générés par le système
+.DS_Store
+Thumbs.db
+
+# Ignore le répertoire vendor (installé avec Composer)
+vendor/
+
+# Ignore le cache et les logs Symfony
+var/cache/
+var/log/
+
+# Ignore les fichiers de configuration sensibles
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Ignore les fichiers générés par Composer
+/composer.phar
+
+# Ignore les fichiers générés par PHPStorm
+.idea/
+
+# Ignore les fichiers de dépendances Node.js (si applicable)
 node_modules/
-composer.lock
-package-lock.json
-yarn.lock
 
-### Ignorer le cache et les logs ###
-/var/cache/
-var/cache/*
-/var/log/
-var/log/*
-/var/sessions/
-var/sessions/*
+# Ignore les fichiers de test coverage (si applicable)
+coverage/
 
-### Ignorer les fichiers temporaires ###
-/public/bundles/
-/public/build/
-/public/uploads/
-/public/media/
-/public/var/
-
-### Ignorer les fichiers de configuration locaux ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/.env
-
-### Ignorer les fichiers générés ###
-/phpunit.result.cache
-/.phpunit.cache/
-/config/jwt/private.pem
-/config/jwt/public.pem
-/config/secrets/
-/var/backups/
-/var/tmp/
-
-### Ignorer les fichiers IDE ###
-/.idea/
-/.vscode/
-/*.iml
-
-### Ignorer les fichiers de build ###
-/.DS_Store
-/.cache/
-/.out/
+# Ignore les fichiers générés par Docker
+docker-compose.override.yaml
