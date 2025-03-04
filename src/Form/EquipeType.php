@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Doctrine\ORM\EntityRepository;
 
 class EquipeType extends AbstractType
 {
@@ -16,10 +17,21 @@ class EquipeType extends AbstractType
         $builder
             ->add('nom_equipe')
             ->add('competance_equipe')
-            ->add('nombre')
+            ->add('ouvriers', EntityType::class, [
+                'class' => Ouvrier::class,
+                'choice_label' => 'nom_ouvrier',  
+                'multiple' => true,               
+                'expanded' => true,               
+            ])
             ->add('chef_equipe', EntityType::class, [
                 'class' => Ouvrier::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom_ouvrier',  
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('o')
+                        ->where('o.role = :role')
+                        ->setParameter('role', 'Chef d\'équipe');
+                },
+                'placeholder' => 'Sélectionnez un chef d\'équipe',
             ])
         ;
     }
