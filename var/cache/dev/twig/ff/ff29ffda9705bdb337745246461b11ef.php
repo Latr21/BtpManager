@@ -119,38 +119,83 @@ class __TwigTemplate_a4fd9c1a8794af121983c104e26fbe74 extends Template
             // line 27
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "nomOuvrier", [], "any", false, false, false, 27), "html", null, true);
             yield "</td> <!-- Utilisez le getter nomOuvrier() -->
-                        <td>";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "competance", [], "any", false, false, false, 28), "html", null, true);
-            yield "</td>
-                        <td>";
+                       <td>
+    ";
             // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "role", [], "any", false, false, false, 29), "html", null, true);
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "competences", [], "any", false, false, false, 29));
+            $context['_iterated'] = false;
+            $context['loop'] = [
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            ];
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["competence"]) {
+                // line 30
+                yield "        ";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["competence"], "html", null, true);
+                if ( !CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 30)) {
+                    yield ", ";
+                }
+                // line 31
+                yield "    ";
+                $context['_iterated'] = true;
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['revindex0'], $context['loop']['revindex'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            if (!$context['_iterated']) {
+                // line 32
+                yield "        Aucune compétence
+    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['competence'], $context['_parent'], $context['_iterated'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 34
+            yield "</td>
+
+                        <td>";
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "role", [], "any", false, false, false, 36), "html", null, true);
             yield "</td>
                         <td>";
-            // line 30
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "planning", [], "any", false, false, false, 30), "html", null, true);
+            // line 37
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "planning", [], "any", false, false, false, 37), "html", null, true);
             yield "</td>
                         <td>";
-            // line 31
-            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "equipe", [], "any", false, true, false, 31), "nom", [], "any", true, true, false, 31) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "equipe", [], "any", false, false, false, 31), "nom", [], "any", false, false, false, 31)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "equipe", [], "any", false, false, false, 31), "nom", [], "any", false, false, false, 31), "html", null, true)) : ("Aucune équipe"));
+            // line 38
+            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "equipe", [], "any", false, true, false, 38), "nom", [], "any", true, true, false, 38) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "equipe", [], "any", false, false, false, 38), "nom", [], "any", false, false, false, 38)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "equipe", [], "any", false, false, false, 38), "nom", [], "any", false, false, false, 38), "html", null, true)) : ("Aucune équipe"));
             yield "</td>
                         <td>
                             <a href=\"";
-            // line 33
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 33)]), "html", null, true);
+            // line 40
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 40)]), "html", null, true);
             yield "\" class=\"btn btn-info btn-sm\">Voir</a>
                             <a href=\"";
-            // line 34
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 34)]), "html", null, true);
+            // line 41
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 41)]), "html", null, true);
             yield "\" class=\"btn btn-warning btn-sm\">Modifier</a>
                             <form method=\"post\" action=\"";
-            // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 42)]), "html", null, true);
             yield "\" class=\"d-inline\" onsubmit=\"return confirm('Voulez-vous vraiment supprimer cet ouvrier ?');\">
                                 <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 36))), "html", null, true);
+            // line 43
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["ouvrier"], "id", [], "any", false, false, false, 43))), "html", null, true);
             yield "\">
                                 <button type=\"submit\" class=\"btn btn-danger btn-sm\">Supprimer</button>
                             </form>
@@ -159,9 +204,9 @@ class __TwigTemplate_a4fd9c1a8794af121983c104e26fbe74 extends Template
                 ";
             $context['_iterated'] = true;
         }
-        // line 41
+        // line 48
         if (!$context['_iterated']) {
-            // line 42
+            // line 49
             yield "                    <tr>
                         <td colspan=\"7\">Aucun ouvrier trouvé</td>
                     </tr>
@@ -170,7 +215,7 @@ class __TwigTemplate_a4fd9c1a8794af121983c104e26fbe74 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['ouvrier'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 53
         yield "            </tbody>
         </table>
     </div>
@@ -202,7 +247,7 @@ class __TwigTemplate_a4fd9c1a8794af121983c104e26fbe74 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  174 => 46,  165 => 42,  163 => 41,  153 => 36,  149 => 35,  145 => 34,  141 => 33,  136 => 31,  132 => 30,  128 => 29,  124 => 28,  120 => 27,  116 => 26,  113 => 25,  108 => 24,  90 => 9,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  219 => 53,  210 => 49,  208 => 48,  198 => 43,  194 => 42,  190 => 41,  186 => 40,  181 => 38,  177 => 37,  173 => 36,  169 => 34,  162 => 32,  149 => 31,  143 => 30,  125 => 29,  120 => 27,  116 => 26,  113 => 25,  108 => 24,  90 => 9,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -234,7 +279,14 @@ class __TwigTemplate_a4fd9c1a8794af121983c104e26fbe74 extends Template
                     <tr>
                         <td>{{ ouvrier.id }}</td>
                         <td>{{ ouvrier.nomOuvrier }}</td> <!-- Utilisez le getter nomOuvrier() -->
-                        <td>{{ ouvrier.competance }}</td>
+                       <td>
+    {% for competence in ouvrier.competences %}
+        {{ competence }}{% if not loop.last %}, {% endif %}
+    {% else %}
+        Aucune compétence
+    {% endfor %}
+</td>
+
                         <td>{{ ouvrier.role }}</td>
                         <td>{{ ouvrier.planning }}</td>
                         <td>{{ ouvrier.equipe.nom ?? 'Aucune équipe' }}</td>

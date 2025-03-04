@@ -102,11 +102,11 @@ class __TwigTemplate_89367ab902aaa007311207c581af89f3 extends Template
             <div class=\"mb-3\">
                 ";
         // line 15
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "competance", [], "any", false, false, false, 15), 'label');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "competences", [], "any", false, false, false, 15), 'label');
         yield "
                 ";
         // line 16
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "competance", [], "any", false, false, false, 16), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Entrez la compétence"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "competences", [], "any", false, false, false, 16), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Entrez la compétence"]]);
         yield "
             </div>
             <div class=\"mb-3\">
@@ -119,38 +119,19 @@ class __TwigTemplate_89367ab902aaa007311207c581af89f3 extends Template
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "role", [], "any", false, false, false, 20), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Entrez le rôle"]]);
         yield "
             </div>
-            <div class=\"mb-3\">
-                ";
-        // line 23
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "planning", [], "any", false, false, false, 23), 'label');
-        yield "
-                ";
-        // line 24
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "planning", [], "any", false, false, false, 24), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Entrez le planning"]]);
-        yield "
-            </div>
-            <div class=\"mb-3\">
-                ";
-        // line 27
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "equipe", [], "any", false, false, false, 27), 'label');
-        yield "
-                ";
-        // line 28
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "equipe", [], "any", false, false, false, 28), 'widget', ["attr" => ["class" => "form-control"]]);
-        yield "
-            </div>
+
 
             <button type=\"submit\" class=\"btn btn-success\">";
-        // line 31
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 31, $this->source); })()), "Créer")) : ("Créer")), "html", null, true);
+        // line 24
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 24, $this->source); })()), "Créer")) : ("Créer")), "html", null, true);
         yield "</button>
         ";
-        // line 32
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), 'form_end');
+        // line 25
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
         yield "
 
         <a href=\"";
-        // line 34
+        // line 27
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_index");
         yield "\" class=\"btn btn-secondary mt-3\">Retour à la liste</a>
     </div>
@@ -182,7 +163,7 @@ class __TwigTemplate_89367ab902aaa007311207c581af89f3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  154 => 34,  149 => 32,  145 => 31,  139 => 28,  135 => 27,  129 => 24,  125 => 23,  119 => 20,  115 => 19,  109 => 16,  105 => 15,  99 => 12,  95 => 11,  90 => 9,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  135 => 27,  130 => 25,  126 => 24,  119 => 20,  115 => 19,  109 => 16,  105 => 15,  99 => 12,  95 => 11,  90 => 9,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -201,21 +182,14 @@ class __TwigTemplate_89367ab902aaa007311207c581af89f3 extends Template
                 {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le nom de l\\'ouvrier'}}) }}
             </div>
             <div class=\"mb-3\">
-                {{ form_label(form.competance) }}
-                {{ form_widget(form.competance, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
+                {{ form_label(form.competences) }}
+                {{ form_widget(form.competences, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
             </div>
             <div class=\"mb-3\">
                 {{ form_label(form.role) }}
                 {{ form_widget(form.role, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
             </div>
-            <div class=\"mb-3\">
-                {{ form_label(form.planning) }}
-                {{ form_widget(form.planning, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le planning'}}) }}
-            </div>
-            <div class=\"mb-3\">
-                {{ form_label(form.equipe) }}
-                {{ form_widget(form.equipe, {'attr': {'class': 'form-control'}}) }}
-            </div>
+
 
             <button type=\"submit\" class=\"btn btn-success\">{{ button_label|default('Créer') }}</button>
         {{ form_end(form) }}

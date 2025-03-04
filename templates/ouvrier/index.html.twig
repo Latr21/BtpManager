@@ -25,7 +25,14 @@
                     <tr>
                         <td>{{ ouvrier.id }}</td>
                         <td>{{ ouvrier.nomOuvrier }}</td> <!-- Utilisez le getter nomOuvrier() -->
-                        <td>{{ ouvrier.competance }}</td>
+                       <td>
+    {% for competence in ouvrier.competences %}
+        {{ competence }}{% if not loop.last %}, {% endif %}
+    {% else %}
+        Aucune compétence
+    {% endfor %}
+</td>
+
                         <td>{{ ouvrier.role }}</td>
                         <td>{{ ouvrier.planning }}</td>
                         <td>{{ ouvrier.equipe.nom ?? 'Aucune équipe' }}</td>

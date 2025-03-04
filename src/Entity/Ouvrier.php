@@ -19,17 +19,17 @@ class Ouvrier
     #[ORM\Column(length: 100)]
     private ?string $nom_ouvrier = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $competance = null;
+    #[ORM\Column(type: Types::JSON)] // Stocke plusieurs compétences
+    private array $competences = [];
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 50)]
     private ?string $role = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $planning = null;
 
     #[ORM\ManyToOne(targetEntity: Equipe::class, inversedBy: "ouvriers")]
-    #[ORM\JoinColumn(onDelete: "SET NULL")] // Assurez-vous que l'équipe est mise à null lorsqu'un ouvrier est supprimé
+    #[ORM\JoinColumn(onDelete: "SET NULL")] // L'équipe peut être null si supprimée
     private ?Equipe $equipe = null;
 
     #[ORM\OneToMany(mappedBy: 'ouvrier', targetEntity: Affectation::class, orphanRemoval: true)]
@@ -56,14 +56,14 @@ class Ouvrier
         return $this;
     }
 
-    public function getCompetance(): ?string
+    public function getCompetences(): array
     {
-        return $this->competance;
+        return $this->competences;
     }
 
-    public function setCompetance(string $competance): self
+    public function setCompetences(array $competences): self
     {
-        $this->competance = $competance;
+        $this->competences = $competences;
         return $this;
     }
 
@@ -100,9 +100,6 @@ class Ouvrier
         return $this;
     }
 
-    /**
-     * @return Collection<int, Affectation>
-     */
     public function getAffectations(): Collection
     {
         return $this->affectations;
@@ -127,3 +124,4 @@ class Ouvrier
         return $this;
     }
 }
+

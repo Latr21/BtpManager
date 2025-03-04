@@ -103,46 +103,91 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
                 </tr>
                 <tr>
                     <th>Compétence</th>
-                    <td>";
-        // line 21
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 21, $this->source); })()), "competance", [], "any", false, false, false, 21), "html", null, true);
+                    <<td>
+    ";
+        // line 22
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 22, $this->source); })()), "competences", [], "any", false, false, false, 22));
+        $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["competence"]) {
+            // line 23
+            yield "        ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["competence"], "html", null, true);
+            if ( !CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 23)) {
+                yield ", ";
+            }
+            // line 24
+            yield "    ";
+            $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['revindex0'], $context['loop']['revindex'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        if (!$context['_iterated']) {
+            // line 25
+            yield "        Aucune compétence
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['competence'], $context['_parent'], $context['_iterated'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
         yield "</td>
+
                 </tr>
                 <tr>
                     <th>Rôle</th>
                     <td>";
-        // line 25
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 25, $this->source); })()), "role", [], "any", false, false, false, 25), "html", null, true);
+        // line 32
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 32, $this->source); })()), "role", [], "any", false, false, false, 32), "html", null, true);
         yield "</td>
                 </tr>
                 <tr>
                     <th>Planning</th>
                     <td>";
-        // line 29
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 29, $this->source); })()), "planning", [], "any", false, false, false, 29), "html", null, true);
+        // line 36
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 36, $this->source); })()), "planning", [], "any", false, false, false, 36), "html", null, true);
         yield "</td>
                 </tr>
                 <tr>
                     <th>Équipe</th>
                     <td>";
-        // line 33
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["ouvrier"] ?? null), "equipe", [], "any", false, true, false, 33), "nom", [], "any", true, true, false, 33) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 33, $this->source); })()), "equipe", [], "any", false, false, false, 33), "nom", [], "any", false, false, false, 33)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 33, $this->source); })()), "equipe", [], "any", false, false, false, 33), "nom", [], "any", false, false, false, 33), "html", null, true)) : ("Aucune équipe"));
+        // line 40
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["ouvrier"] ?? null), "equipe", [], "any", false, true, false, 40), "nom", [], "any", true, true, false, 40) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 40, $this->source); })()), "equipe", [], "any", false, false, false, 40), "nom", [], "any", false, false, false, 40)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 40, $this->source); })()), "equipe", [], "any", false, false, false, 40), "nom", [], "any", false, false, false, 40), "html", null, true)) : ("Aucune équipe"));
         yield "</td>
                 </tr>
             </tbody>
         </table>
 
         <a href=\"";
-        // line 38
+        // line 45
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_index");
         yield "\" class=\"btn btn-secondary\">Retour à la liste</a>
         <a href=\"";
-        // line 39
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
+        // line 46
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 46, $this->source); })()), "id", [], "any", false, false, false, 46)]), "html", null, true);
         yield "\" class=\"btn btn-warning\">Modifier</a>
 
         ";
-        // line 41
+        // line 48
         yield Twig\Extension\CoreExtension::include($this->env, $context, "ouvrier/_delete_form.html.twig");
         yield "
     </div>
@@ -174,7 +219,7 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  146 => 41,  141 => 39,  137 => 38,  129 => 33,  122 => 29,  115 => 25,  108 => 21,  101 => 17,  94 => 13,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  191 => 48,  186 => 46,  182 => 45,  174 => 40,  167 => 36,  160 => 32,  153 => 27,  146 => 25,  133 => 24,  127 => 23,  109 => 22,  101 => 17,  94 => 13,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -199,7 +244,14 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
                 </tr>
                 <tr>
                     <th>Compétence</th>
-                    <td>{{ ouvrier.competance }}</td>
+                    <<td>
+    {% for competence in ouvrier.competences %}
+        {{ competence }}{% if not loop.last %}, {% endif %}
+    {% else %}
+        Aucune compétence
+    {% endfor %}
+</td>
+
                 </tr>
                 <tr>
                     <th>Rôle</th>

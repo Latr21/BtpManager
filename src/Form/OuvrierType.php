@@ -8,15 +8,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class OuvrierType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom_ouvrier') // champ pour nom_ouvrier
-            ->add('competance')
-            ->add('role', ChoiceType::class, [
+            ->add('nom_ouvrier') // Champ pour le nom de l'ouvrier
+            ->add('competences', ChoiceType::class, [
                 'choices' => [
                     'Maçon' => 'Maçon',
                     'Coffreur' => 'Coffreur',
@@ -38,15 +38,29 @@ class OuvrierType extends AbstractType
                     'Vitrificateur' => 'Vitrificateur',
                     'Solier-moquettiste' => 'Solier-moquettiste',
                     'Staffeur-Ornemaniste' => 'Staffeur-Ornemaniste',
-                    'Chef d’équipe' => 'Chef d’équipe',
                 ],
+                'expanded' => false, // Affiche sous forme de menu déroulant
+                'multiple' => true, // Permet de sélectionner plusieurs compétences
+                'attr' => ['class' => 'form-control select-competences'],
+                'placeholder' => 'Sélectionnez les compétences',
+            ])
+            ->add('role', ChoiceType::class, [
+                'choices' => [
+                    'Ouvrier' => 'Ouvrier',
+                    'Chef' => 'Chef',
+                ],
+                'expanded' => false, // Menu déroulant
+                'multiple' => false, // Un seul choix possible
                 'attr' => ['class' => 'form-control'],
                 'placeholder' => 'Choisissez un rôle',
             ])
-            ->add('planning')
+
             ->add('equipe', EntityType::class, [
                 'class' => Equipe::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom_equipe',
+                'placeholder' => 'Sélectionner une équipe',
+                'required' => false, // Rendre le champ non obligatoire
+                'attr' => ['class' => 'form-control'],
             ]);
     }
 
@@ -57,4 +71,3 @@ class OuvrierType extends AbstractType
         ]);
     }
 }
-

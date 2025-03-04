@@ -18,7 +18,14 @@
                 </tr>
                 <tr>
                     <th>Compétence</th>
-                    <td>{{ ouvrier.competance }}</td>
+                    <<td>
+    {% for competence in ouvrier.competences %}
+        {{ competence }}{% if not loop.last %}, {% endif %}
+    {% else %}
+        Aucune compétence
+    {% endfor %}
+</td>
+
                 </tr>
                 <tr>
                     <th>Rôle</th>
