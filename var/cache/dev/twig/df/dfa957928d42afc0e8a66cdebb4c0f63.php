@@ -64,7 +64,7 @@ class __TwigTemplate_7a0001e197c6066d72065229096cca74 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Affectation";
+        yield "Affectation des équipes";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -82,41 +82,54 @@ class __TwigTemplate_7a0001e197c6066d72065229096cca74 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Affectation</h1>
+        yield "    <div class=\"container mt-5\">
+    <h2 class=\"text-center mb-4\">Affectation</h2>
 
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
-        yield "</td>
-            </tr>
-            <tr>
-                <th>Date_affectation</th>
-                <td>";
+    <div class=\"card shadow-lg border-0\">
+        <div class=\"card-body\">
+            <h4 class=\"card-title text-primary\">";
+        // line 11
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 11, $this->source); })()), "nom", [], "any", false, false, false, 11), "html", null, true);
+        yield "</h4>
+            <ul class=\"list-group list-group-flush\">
+                <li class=\"list-group-item\"><strong>Equipe :</strong> ";
+        // line 13
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 13, $this->source); })()), "equipe", [], "any", false, false, false, 13), "nomEquipe", [], "any", false, false, false, 13), "html", null, true);
+        yield "</li>
+                <li class=\"list-group-item\"><strong>Chantier :</strong> ";
+        // line 14
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 14, $this->source); })()), "chantier", [], "any", false, false, false, 14), "nom", [], "any", false, false, false, 14), "html", null, true);
+        yield "</li>
+                <li class=\"list-group-item\"><strong>Date de Début :</strong> ";
+        // line 15
+        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 15, $this->source); })()), "dateDebut", [], "any", false, false, false, 15)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 15, $this->source); })()), "dateDebut", [], "any", false, false, false, 15), "d/m/Y"), "html", null, true)) : ("-"));
+        yield "</li>
+                <li class=\"list-group-item\"><strong>Date de Fin :</strong> ";
         // line 16
-        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 16, $this->source); })()), "dateAffectation", [], "any", false, false, false, 16)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 16, $this->source); })()), "dateAffectation", [], "any", false, false, false, 16), "Y-m-d"), "html", null, true)) : (""));
-        yield "</td>
-            </tr>
-        </tbody>
-    </table>
+        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 16, $this->source); })()), "dateFin", [], "any", false, false, false, 16)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 16, $this->source); })()), "dateFin", [], "any", false, false, false, 16), "d/m/Y"), "html", null, true)) : ("-"));
+        yield "</li>
+            </ul>
+        </div>
+    </div>
 
-    <a href=\"";
-        // line 21
+        <div class=\"mt-4 text-center\">
+        <a href=\"";
+        // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_index");
-        yield "\">back to list</a>
-
-    <a href=\"";
-        // line 23
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
-        yield "\">edit</a>
-
-    ";
+        yield "\" class=\"btn btn-secondary\">
+            <i class=\"fas fa-arrow-left\"></i> Retour à la liste
+        </a>
+        <a href=\"";
         // line 25
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["affectation"]) || array_key_exists("affectation", $context) ? $context["affectation"] : (function () { throw new RuntimeError('Variable "affectation" does not exist.', 25, $this->source); })()), "id", [], "any", false, false, false, 25)]), "html", null, true);
+        yield "\" class=\"btn btn-warning\">
+            <i class=\"fas fa-edit\"></i> Modifier
+        </a>
+        ";
+        // line 28
         yield Twig\Extension\CoreExtension::include($this->env, $context, "affectation/_delete_form.html.twig");
         yield "
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -145,37 +158,40 @@ class __TwigTemplate_7a0001e197c6066d72065229096cca74 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  118 => 25,  113 => 23,  108 => 21,  100 => 16,  93 => 12,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  130 => 28,  124 => 25,  118 => 22,  109 => 16,  105 => 15,  101 => 14,  97 => 13,  92 => 11,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Affectation{% endblock %}
+{% block title %}Affectation des équipes{% endblock %}
 
 {% block body %}
-    <h1>Affectation</h1>
+    <div class=\"container mt-5\">
+    <h2 class=\"text-center mb-4\">Affectation</h2>
 
-    <table class=\"table\">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ affectation.id }}</td>
-            </tr>
-            <tr>
-                <th>Date_affectation</th>
-                <td>{{ affectation.dateAffectation ? affectation.dateAffectation|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class=\"card shadow-lg border-0\">
+        <div class=\"card-body\">
+            <h4 class=\"card-title text-primary\">{{ affectation.nom }}</h4>
+            <ul class=\"list-group list-group-flush\">
+                <li class=\"list-group-item\"><strong>Equipe :</strong> {{ affectation.equipe.nomEquipe }}</li>
+                <li class=\"list-group-item\"><strong>Chantier :</strong> {{ affectation.chantier.nom}}</li>
+                <li class=\"list-group-item\"><strong>Date de Début :</strong> {{ affectation.dateDebut ? affectation.dateDebut|date('d/m/Y') : '-' }}</li>
+                <li class=\"list-group-item\"><strong>Date de Fin :</strong> {{ affectation.dateFin ? affectation.dateFin|date('d/m/Y') : '-' }}</li>
+            </ul>
+        </div>
+    </div>
 
-    <a href=\"{{ path('app_affectation_index') }}\">back to list</a>
-
-    <a href=\"{{ path('app_affectation_edit', {'id': affectation.id}) }}\">edit</a>
-
-    {{ include('affectation/_delete_form.html.twig') }}
-{% endblock %}
-", "affectation/show.html.twig", "/Users/latr/BTP_Manager/templates/affectation/show.html.twig");
+        <div class=\"mt-4 text-center\">
+        <a href=\"{{ path('app_affectation_index') }}\" class=\"btn btn-secondary\">
+            <i class=\"fas fa-arrow-left\"></i> Retour à la liste
+        </a>
+        <a href=\"{{ path('app_affectation_edit', {'id': affectation.id}) }}\" class=\"btn btn-warning\">
+            <i class=\"fas fa-edit\"></i> Modifier
+        </a>
+        {{ include('affectation/_delete_form.html.twig') }}
+    </div>
+{% endblock %}", "affectation/show.html.twig", "/Users/hugo/Documents/IPSSI/2024 - 2025/UE 3 - Préparer le déploiment d'une application sécurisée/1 - Masterclass test unitaire PHP & JavaScript/BtpManager/templates/affectation/show.html.twig");
     }
 }

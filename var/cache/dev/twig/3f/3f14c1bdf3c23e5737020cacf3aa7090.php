@@ -180,6 +180,6 @@ class __TwigTemplate_9cb53200d0ab5c0ad0895d6e871de73b extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/latr/BTP_Manager/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/hugo/Documents/IPSSI/2024 - 2025/UE 3 - Préparer le déploiment d'une application sécurisée/1 - Masterclass test unitaire PHP & JavaScript/BtpManager/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
     }
 }

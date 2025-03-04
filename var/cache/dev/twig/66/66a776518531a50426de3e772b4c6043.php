@@ -88,6 +88,6 @@ class __TwigTemplate_d8b802780509f9a8ca378fe00de439b6 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ affectation.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "affectation/_delete_form.html.twig", "/Users/latr/BTP_Manager/templates/affectation/_delete_form.html.twig");
+", "affectation/_delete_form.html.twig", "/Users/hugo/Documents/IPSSI/2024 - 2025/UE 3 - Préparer le déploiment d'une application sécurisée/1 - Masterclass test unitaire PHP & JavaScript/BtpManager/templates/affectation/_delete_form.html.twig");
     }
 }

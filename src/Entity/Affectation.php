@@ -25,7 +25,13 @@ class Affectation
     private ?Chantier $chantier = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date_affectation = null;
+    private ?\DateTimeInterface $date_debut = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_fin = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $nom = null;
 
     public function getId(): ?int 
     { 
@@ -54,14 +60,38 @@ class Affectation
         return $this; 
     }
 
-    public function getDateAffectation(): ?\DateTimeInterface 
+    public function getDateDebut(): ?\DateTimeInterface 
     { 
-        return $this->date_affectation; 
+        return $this->date_debut; 
     }
 
-    public function setDateAffectation(\DateTimeInterface $date_affectation): static 
+    public function setDateDebut(\DateTimeInterface $date_debut): static 
     { 
-        $this->date_affectation = $date_affectation; 
+        $this->date_debut = $date_debut; 
         return $this; 
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->date_fin;
+    }
+
+    public function setDateFin(\DateTimeInterface $date_fin): static
+    {
+        $this->date_fin = $date_fin;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): static
+    {
+        $this->nom = $nom;
+
+        return $this;
     }
 }

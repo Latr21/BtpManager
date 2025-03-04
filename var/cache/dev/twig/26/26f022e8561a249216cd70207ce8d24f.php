@@ -144,6 +144,6 @@ class __TwigTemplate_9cca28b6ded62ac1a0c5da034246039e extends Template
 
     {{ include('affectation/_delete_form.html.twig') }}
 {% endblock %}
-", "affectation/edit.html.twig", "/Users/latr/BTP_Manager/templates/affectation/edit.html.twig");
+", "affectation/edit.html.twig", "/Users/hugo/Documents/IPSSI/2024 - 2025/UE 3 - Préparer le déploiment d'une application sécurisée/1 - Masterclass test unitaire PHP & JavaScript/BtpManager/templates/affectation/edit.html.twig");
     }
 }

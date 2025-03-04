@@ -93,6 +93,6 @@ class __TwigTemplate_f37668b5ed1290c3ede834c8b6965cb8 extends Template
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "affectation/_form.html.twig", "/Users/latr/BTP_Manager/templates/affectation/_form.html.twig");
+", "affectation/_form.html.twig", "/Users/hugo/Documents/IPSSI/2024 - 2025/UE 3 - Préparer le déploiment d'une application sécurisée/1 - Masterclass test unitaire PHP & JavaScript/BtpManager/templates/affectation/_form.html.twig");
     }
 }

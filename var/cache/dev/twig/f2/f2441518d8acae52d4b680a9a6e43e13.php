@@ -137,6 +137,6 @@ class __TwigTemplate_e1f265159d23138f46c81942fb74b1ac extends Template
 
     <a href=\"{{ path('app_affectation_index') }}\">back to list</a>
 {% endblock %}
-", "affectation/new.html.twig", "/Users/latr/BTP_Manager/templates/affectation/new.html.twig");
+", "affectation/new.html.twig", "/Users/hugo/Documents/IPSSI/2024 - 2025/UE 3 - Préparer le déploiment d'une application sécurisée/1 - Masterclass test unitaire PHP & JavaScript/BtpManager/templates/affectation/new.html.twig");
     }
 }
