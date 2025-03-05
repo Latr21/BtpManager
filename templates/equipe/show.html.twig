@@ -6,22 +6,29 @@
     <div class="container mt-5">
         <h1 class="mb-4">Détails de l'Équipe</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Nom_equipe</th>
-                <td>{{ equipe.nomEquipe }}</td>
-            </tr>
-            <tr>
-                <th>Competance_equipe</th>
-                <td>{{ equipe.competanceEquipe }}</td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>{{ equipe.nombre }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nom de l'équipe</th>
+                            <td>{{ equipe.nomEquipe }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Compétence de l'équipe</th>
+                            <td>{{ equipe.competanceEquipe }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nombre d'ouvriers</th>
+                            <td>{{ equipe.nombre }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Chef d'équipe</th>
+                            <td>{{ equipe.chefEquipe ? equipe.chefEquipe.nomOuvrier : 'Aucun' }}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
 
     <a href="{{ path('app_equipe_index') }}">back to list</a>
 

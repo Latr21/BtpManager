@@ -30,23 +30,24 @@ final class EquipeController extends AbstractController
         $form->handleRequest($request);
     
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer les ouvriers sélectionnés
             $ouvriers = $form->get('ouvriers')->getData();
+            
+            $equipe->setNombre(count($ouvriers));
     
-            // Mettre à jour le nombre d'ouvriers dans l'entité
-            $equipe->setNombre(count($ouvriers));  // Compter les ouvriers sélectionnés
-    
-            // Persister l'équipe (pour avoir un ID valide)
             $entityManager->persist($equipe);
             $entityManager->flush();
     
-            // Mettre à jour l'equipe_id des ouvriers sélectionnés
             foreach ($ouvriers as $ouvrier) {
-                $ouvrier->setEquipe($equipe); // Associer l'ouvrier à l'équipe
-                $entityManager->persist($ouvrier); // Persister chaque ouvrier modifié
+                $ouvrier->setEquipe($equipe);
+                $entityManager->persist($ouvrier);
             }
     
-            // Sauvegarder les changements pour les ouvriers
+            if ($equipe->getChefEquipe()) {
+                $chef = $equipe->getChefEquipe();
+                $chef->setEquipe($equipe);
+                $entityManager->persist($chef);
+            }
+    
             $entityManager->flush();
     
             return $this->redirectToRoute('app_equipe_index', [], Response::HTTP_SEE_OTHER);
@@ -54,14 +55,13 @@ final class EquipeController extends AbstractController
     
         return $this->render('equipe/new.html.twig', [
             'equipe' => $equipe,
-            'form' => $form->createView(), // Assurez-vous de passer la vue du formulaire ici
+            'form' => $form->createView(),
         ]);
     }
-
+    
     #[Route('/{id}', name: 'app_equipe_show', methods: ['GET'])]
     public function show(Equipe $equipe): Response
     {
-        // Afficher les ouvriers associés à cette équipe
         return $this->render('equipe/show.html.twig', [
             'equipe' => $equipe,
         ]);
@@ -74,7 +74,6 @@ final class EquipeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Mettre à jour le nombre d'ouvriers dans l'entité (au cas où la sélection change)
             $ouvriers = $form->get('ouvriers')->getData();
             $equipe->setNombre(count($ouvriers));
 
