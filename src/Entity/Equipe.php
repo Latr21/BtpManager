@@ -19,7 +19,7 @@ class Equipe
     private ?string $nom_equipe = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $competence_equipe = null;
+    private ?string $competance_equipe = null;
 
     #[ORM\Column]
     private ?int $nombre = null;
