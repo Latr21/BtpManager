@@ -1,4 +1,23 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.nom) }}
+    {{ form_row(form.date_debut) }}
+    {{ form_row(form.date_fin) }}
+    {{ form_row(form.chantier) }}
+
+    <div class="row">
+        {% for equipe in form.equipe %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <label>
+                            {{ form_widget(equipe) }}
+                            <strong>{{ equipe.vars.label }}</strong>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
