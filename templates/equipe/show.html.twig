@@ -26,6 +26,11 @@
                             <th scope="row">Nombre d'ouvriers</th>
                             <td>{{ equipe.nombre }}</td>
                         </tr>
+                        <tr>
+                        <th scope="row">Chef d'équipe</th>
+                            <td>{{ equipe.chefEquipe ? equipe.chefEquipe.nomOuvrier : 'Aucun' }}</td>
+                        </tr>
+                        
                     </tbody>
                 </table>
 
