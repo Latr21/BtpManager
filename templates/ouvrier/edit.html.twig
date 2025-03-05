@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Ouvrier{% endblock %}
+{% block title %}Modifier un Ouvrier{% endblock %}
 
 {% block body %}
-    <h1>Edit Ouvrier</h1>
+    <div class="container">
+        <h1 class="my-4 text-primary">Modifier un Ouvrier</h1>
 
-    {{ include('ouvrier/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ form_start(form) }}
+            <div class="mb-3">
+                {{ form_label(form.nom_ouvrier, 'Nom de l\'Ouvrier') }}
+                {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le nom de l\'ouvrier'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.competences, 'Compétence') }}
+                {{ form_widget(form.competences, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.role, 'Rôle') }}
+                {{ form_widget(form.role, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
+            </div>
 
-    <a href="{{ path('app_ouvrier_index') }}">back to list</a>
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+        {{ form_end(form) }}
 
-    {{ include('ouvrier/_delete_form.html.twig') }}
+        <a href="{{ path('app_ouvrier_index') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+    </div>
 {% endblock %}

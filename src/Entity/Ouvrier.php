@@ -19,17 +19,15 @@ class Ouvrier
     #[ORM\Column(length: 100)]
     private ?string $nom_ouvrier = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $competance = null;
+    #[ORM\Column(type: Types::JSON)] // Stocke plusieurs compétences
+    private array $competences = [];
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 50)]
     private ?string $role = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $planning = null;
 
     #[ORM\ManyToOne(targetEntity: Equipe::class, inversedBy: "ouvriers")]
-    #[ORM\JoinColumn(onDelete: "SET NULL")]
+    #[ORM\JoinColumn(onDelete: "SET NULL")] // L'équipe peut être null si supprimée
     private ?Equipe $equipe = null;
 
     #[ORM\OneToMany(mappedBy: 'ouvrier', targetEntity: Affectation::class, orphanRemoval: true)]
@@ -40,25 +38,30 @@ class Ouvrier
         $this->affectations = new ArrayCollection();
     }
 
-    public function getId(): ?int { return $this->id; }
-    public function getNomOuvrier(): ?string { return $this->nom_ouvrier; }
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
-    public function setNomOuvrier(string $nom_ouvrier): static
+    public function getNomOuvrier(): ?string
+    {
+        return $this->nom_ouvrier;
+    }
+
+    public function setNomOuvrier(string $nom_ouvrier): self
     {
         $this->nom_ouvrier = $nom_ouvrier;
-
         return $this;
     }
 
-    public function getCompetance(): ?string
+    public function getCompetences(): array
     {
-        return $this->competance;
+        return $this->competences;
     }
 
-    public function setCompetance(string $competance): static
+    public function setCompetences(array $competences): self
     {
-        $this->competance = $competance;
-
+        $this->competences = $competences;
         return $this;
     }
 
@@ -67,22 +70,9 @@ class Ouvrier
         return $this->role;
     }
 
-    public function setRole(string $role): static
+    public function setRole(string $role): self
     {
         $this->role = $role;
-
-        return $this;
-    }
-
-    public function getPlanning(): ?string
-    {
-        return $this->planning;
-    }
-
-    public function setPlanning(?string $planning): static
-    {
-        $this->planning = $planning;
-
         return $this;
     }
 
@@ -91,40 +81,33 @@ class Ouvrier
         return $this->equipe;
     }
 
-    public function setEquipe(?Equipe $equipe): static
+    public function setEquipe(?Equipe $equipe): self
     {
         $this->equipe = $equipe;
-
         return $this;
     }
 
-    /**
-     * @return Collection<int, Affectation>
-     */
     public function getAffectations(): Collection
     {
         return $this->affectations;
     }
 
-    public function addAffectation(Affectation $affectation): static
+    public function addAffectation(Affectation $affectation): self
     {
         if (!$this->affectations->contains($affectation)) {
             $this->affectations->add($affectation);
             $affectation->setOuvrier($this);
         }
-
         return $this;
     }
 
-    public function removeAffectation(Affectation $affectation): static
+    public function removeAffectation(Affectation $affectation): self
     {
         if ($this->affectations->removeElement($affectation)) {
-            // set the owning side to null (unless already changed)
             if ($affectation->getOuvrier() === $this) {
                 $affectation->setOuvrier(null);
             }
         }
-
         return $this;
     }
 }

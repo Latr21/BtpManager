@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .hero {
+        background: url('https://source.unsplash.com/1600x900/?construction,team') no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 120px 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    .card {
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<header class="hero">
+    <div class="container">
+        <h1>Bienvenue sur la gestion des équipes et chantiers</h1>
+        <p>Gérez facilement vos équipes, chantiers, ouvriers et affectations.</p>
+    </div>
+</header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Équipes</h5>
+                    <p class="card-text">Gérez les équipes travaillant sur vos projets.</p>
+                    <a href="{{ path('app_equipe_index') }}" class="btn btn-primary w-100">Voir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Chantiers</h5>
+                    <p class="card-text">Consultez la liste des chantiers en cours.</p>
+                    <a href="{{ path('app_chantier_index') }}" class="btn btn-primary w-100">Voir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Affectations</h5>
+                    <p class="card-text">Suivez les affectations de vos ouvriers.</p>
+                    <a href="{{ path('app_affectation_index') }}" class="btn btn-primary w-100">Voir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Ouvriers</h5>
+                    <p class="card-text">Gérez vos ouvriers et leurs compétences.</p>
+                    <a href="{{ path('app_ouvrier_index') }}" class="btn btn-primary w-100">Voir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

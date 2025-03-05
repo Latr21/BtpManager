@@ -23,6 +23,7 @@ class EquipeType extends AbstractType
                 'multiple' => true,               
                 'expanded' => true,               
             ])
+            ->add('nombre')
             ->add('chef_equipe', EntityType::class, [
                 'class' => Ouvrier::class,
                 'choice_label' => 'nom_ouvrier',  
