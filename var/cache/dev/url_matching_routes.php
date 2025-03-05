@@ -13,8 +13,12 @@ return [
         '/chantier/new' => [[['_route' => 'app_chantier_new', '_controller' => 'App\\Controller\\ChantierController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/equipe' => [[['_route' => 'app_equipe_index', '_controller' => 'App\\Controller\\EquipeController::index'], null, ['GET' => 0], null, false, false, null]],
         '/equipe/new' => [[['_route' => 'app_equipe_new', '_controller' => 'App\\Controller\\EquipeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/ouvrier' => [[['_route' => 'app_ouvrier_index', '_controller' => 'App\\Controller\\OuvrierController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/home' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/ouvrier' => [[['_route' => 'app_ouvrier_index', '_controller' => 'App\\Controller\\OuvrierController::index'], null, ['GET' => 0], null, true, false, null]],
         '/ouvrier/new' => [[['_route' => 'app_ouvrier_new', '_controller' => 'App\\Controller\\OuvrierController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
