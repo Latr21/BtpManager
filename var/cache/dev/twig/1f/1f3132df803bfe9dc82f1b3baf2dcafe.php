@@ -88,6 +88,6 @@ class __TwigTemplate_6e178ed754cabceb2250fd872cfe760f extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ affectation.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "affectation/_delete_form.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\affectation\\_delete_form.html.twig");
+", "affectation/_delete_form.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\affectation\\_delete_form.html.twig");
     }
 }

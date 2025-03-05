@@ -25,8 +25,6 @@ class Ouvrier
     #[ORM\Column(length: 50)]
     private ?string $role = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $planning = null;
 
     #[ORM\ManyToOne(targetEntity: Equipe::class, inversedBy: "ouvriers")]
     #[ORM\JoinColumn(onDelete: "SET NULL")] // L'équipe peut être null si supprimée
@@ -78,17 +76,6 @@ class Ouvrier
         return $this;
     }
 
-    public function getPlanning(): ?string
-    {
-        return $this->planning;
-    }
-
-    public function setPlanning(?string $planning): self
-    {
-        $this->planning = $planning;
-        return $this;
-    }
-
     public function getEquipe(): ?Equipe
     {
         return $this->equipe;
@@ -124,4 +111,3 @@ class Ouvrier
         return $this;
     }
 }
-

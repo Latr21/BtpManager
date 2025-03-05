@@ -89,7 +89,9 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
         background-size: cover;
         color: white;
         text-align: center;
-        padding: 100px 20px;
+        padding: 120px 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
     }
     .hero h1 {
         font-size: 3rem;
@@ -97,9 +99,15 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
     }
     .card {
         transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .card:hover {
         transform: scale(1.05);
+    }
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
     }
 </style>
 ";
@@ -109,7 +117,7 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
         yield from [];
     }
 
-    // line 27
+    // line 35
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -119,39 +127,8 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 28
-        yield "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-    <div class=\"container\">
-        <a class=\"navbar-brand\" href=\"";
-        // line 30
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\">Mon Application</a>
-        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">
-            <span class=\"navbar-toggler-icon\"></span>
-        </button>
-        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
-            <ul class=\"navbar-nav\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 36
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_equipe_index");
-        yield "\">Équipes</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-        // line 37
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_chantier_index");
-        yield "\">Chantiers</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-        // line 38
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_index");
-        yield "\">Affectations</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-        // line 39
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_index");
-        yield "\">Ouvriers</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+        yield "
 <header class=\"hero\">
     <div class=\"container\">
         <h1>Bienvenue sur la gestion des équipes et chantiers</h1>
@@ -161,56 +138,57 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
 
 <div class=\"container mt-5\">
     <div class=\"row\">
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Équipes</h5>
                     <p class=\"card-text\">Gérez les équipes travaillant sur vos projets.</p>
                     <a href=\"";
-        // line 59
+        // line 51
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_equipe_index");
-        yield "\" class=\"btn btn-primary\">Voir</a>
+        yield "\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Chantiers</h5>
                     <p class=\"card-text\">Consultez la liste des chantiers en cours.</p>
                     <a href=\"";
-        // line 68
+        // line 60
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_chantier_index");
-        yield "\" class=\"btn btn-primary\">Voir</a>
+        yield "\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Affectations</h5>
                     <p class=\"card-text\">Suivez les affectations de vos ouvriers.</p>
                     <a href=\"";
-        // line 77
+        // line 69
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_affectation_index");
-        yield "\" class=\"btn btn-primary\">Voir</a>
+        yield "\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Ouvriers</h5>
                     <p class=\"card-text\">Gérez vos ouvriers et leurs compétences.</p>
                     <a href=\"";
-        // line 86
+        // line 78
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_index");
-        yield "\" class=\"btn btn-primary\">Voir</a>
+        yield "\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -239,7 +217,7 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  207 => 86,  195 => 77,  183 => 68,  171 => 59,  148 => 39,  144 => 38,  140 => 37,  136 => 36,  127 => 30,  123 => 28,  113 => 27,  86 => 6,  76 => 5,  59 => 3,  42 => 1,);
+        return array (  184 => 78,  172 => 69,  160 => 60,  148 => 51,  131 => 36,  121 => 35,  86 => 6,  76 => 5,  59 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -255,7 +233,9 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
         background-size: cover;
         color: white;
         text-align: center;
-        padding: 100px 20px;
+        padding: 120px 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
     }
     .hero h1 {
         font-size: 3rem;
@@ -263,30 +243,20 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
     }
     .card {
         transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .card:hover {
         transform: scale(1.05);
+    }
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
     }
 </style>
 {% endblock %}
 
 {% block body %}
-<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-    <div class=\"container\">
-        <a class=\"navbar-brand\" href=\"{{ path('app_home') }}\">Mon Application</a>
-        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">
-            <span class=\"navbar-toggler-icon\"></span>
-        </button>
-        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
-            <ul class=\"navbar-nav\">
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('app_equipe_index') }}\">Équipes</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('app_chantier_index') }}\">Chantiers</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('app_affectation_index') }}\">Affectations</a></li>
-                <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('app_ouvrier_index') }}\">Ouvriers</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <header class=\"hero\">
     <div class=\"container\">
@@ -297,45 +267,46 @@ class __TwigTemplate_526455eef5d1f48ffb002144cc979163 extends Template
 
 <div class=\"container mt-5\">
     <div class=\"row\">
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Équipes</h5>
                     <p class=\"card-text\">Gérez les équipes travaillant sur vos projets.</p>
-                    <a href=\"{{ path('app_equipe_index') }}\" class=\"btn btn-primary\">Voir</a>
+                    <a href=\"{{ path('app_equipe_index') }}\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Chantiers</h5>
                     <p class=\"card-text\">Consultez la liste des chantiers en cours.</p>
-                    <a href=\"{{ path('app_chantier_index') }}\" class=\"btn btn-primary\">Voir</a>
+                    <a href=\"{{ path('app_chantier_index') }}\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Affectations</h5>
                     <p class=\"card-text\">Suivez les affectations de vos ouvriers.</p>
-                    <a href=\"{{ path('app_affectation_index') }}\" class=\"btn btn-primary\">Voir</a>
+                    <a href=\"{{ path('app_affectation_index') }}\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
-        <div class=\"col-md-3\">
-            <div class=\"card text-center\">
+        <div class=\"col-md-3 mb-4\">
+            <div class=\"card text-center shadow-sm\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">Ouvriers</h5>
                     <p class=\"card-text\">Gérez vos ouvriers et leurs compétences.</p>
-                    <a href=\"{{ path('app_ouvrier_index') }}\" class=\"btn btn-primary\">Voir</a>
+                    <a href=\"{{ path('app_ouvrier_index') }}\" class=\"btn btn-primary w-100\">Voir</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
-", "home/index.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\home\\index.html.twig");
     }
 }

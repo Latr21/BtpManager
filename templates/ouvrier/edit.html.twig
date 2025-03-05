@@ -4,24 +4,20 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="my-4">Modifier un Ouvrier</h1>
+        <h1 class="my-4 text-primary">Modifier un Ouvrier</h1>
 
         {{ form_start(form) }}
             <div class="mb-3">
-                {{ form_label(form.nom_ouvrier) }}
+                {{ form_label(form.nom_ouvrier, 'Nom de l\'Ouvrier') }}
                 {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le nom de l\'ouvrier'}}) }}
             </div>
             <div class="mb-3">
-                {{ form_label(form.competences) }}
+                {{ form_label(form.competences, 'Compétence') }}
                 {{ form_widget(form.competences, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
             </div>
             <div class="mb-3">
-                {{ form_label(form.role) }}
+                {{ form_label(form.role, 'Rôle') }}
                 {{ form_widget(form.role, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
-            </div>
-            <div class="mb-3">
-                {{ form_label(form.equipe) }}
-                {{ form_widget(form.equipe, {'attr': {'class': 'form-control'}}) }}
             </div>
 
             <button type="submit" class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>

@@ -83,7 +83,7 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
 
         // line 6
         yield "    <div class=\"container\">
-        <h1 class=\"my-4\">Modifier un Ouvrier</h1>
+        <h1 class=\"my-4 text-primary\">Modifier un Ouvrier</h1>
 
         ";
         // line 9
@@ -92,7 +92,7 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
             <div class=\"mb-3\">
                 ";
         // line 11
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "nom_ouvrier", [], "any", false, false, false, 11), 'label');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "nom_ouvrier", [], "any", false, false, false, 11), 'label', ["label" => "Nom de l'Ouvrier"]);
         yield "
                 ";
         // line 12
@@ -102,7 +102,7 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
             <div class=\"mb-3\">
                 ";
         // line 15
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "competences", [], "any", false, false, false, 15), 'label');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "competences", [], "any", false, false, false, 15), 'label', ["label" => "Compétence"]);
         yield "
                 ";
         // line 16
@@ -112,35 +112,25 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
             <div class=\"mb-3\">
                 ";
         // line 19
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "role", [], "any", false, false, false, 19), 'label');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "role", [], "any", false, false, false, 19), 'label', ["label" => "Rôle"]);
         yield "
                 ";
         // line 20
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "role", [], "any", false, false, false, 20), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Entrez le rôle"]]);
         yield "
             </div>
-            <div class=\"mb-3\">
-                ";
-        // line 23
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "equipe", [], "any", false, false, false, 23), 'label');
-        yield "
-                ";
-        // line 24
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "equipe", [], "any", false, false, false, 24), 'widget', ["attr" => ["class" => "form-control"]]);
-        yield "
-            </div>
 
             <button type=\"submit\" class=\"btn btn-primary\">";
-        // line 27
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 27, $this->source); })()), "Mettre à jour")) : ("Mettre à jour")), "html", null, true);
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 23, $this->source); })()), "Mettre à jour")) : ("Mettre à jour")), "html", null, true);
         yield "</button>
         ";
-        // line 28
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_end');
+        // line 24
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
         yield "
 
         <a href=\"";
-        // line 30
+        // line 26
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_index");
         yield "\" class=\"btn btn-secondary mt-3\">Retour à la liste</a>
     </div>
@@ -172,7 +162,7 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  144 => 30,  139 => 28,  135 => 27,  129 => 24,  125 => 23,  119 => 20,  115 => 19,  109 => 16,  105 => 15,  99 => 12,  95 => 11,  90 => 9,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  134 => 26,  129 => 24,  125 => 23,  119 => 20,  115 => 19,  109 => 16,  105 => 15,  99 => 12,  95 => 11,  90 => 9,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -183,24 +173,20 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
 
 {% block body %}
     <div class=\"container\">
-        <h1 class=\"my-4\">Modifier un Ouvrier</h1>
+        <h1 class=\"my-4 text-primary\">Modifier un Ouvrier</h1>
 
         {{ form_start(form) }}
             <div class=\"mb-3\">
-                {{ form_label(form.nom_ouvrier) }}
+                {{ form_label(form.nom_ouvrier, 'Nom de l\\'Ouvrier') }}
                 {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le nom de l\\'ouvrier'}}) }}
             </div>
             <div class=\"mb-3\">
-                {{ form_label(form.competences) }}
+                {{ form_label(form.competences, 'Compétence') }}
                 {{ form_widget(form.competences, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
             </div>
             <div class=\"mb-3\">
-                {{ form_label(form.role) }}
+                {{ form_label(form.role, 'Rôle') }}
                 {{ form_widget(form.role, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
-            </div>
-            <div class=\"mb-3\">
-                {{ form_label(form.equipe) }}
-                {{ form_widget(form.equipe, {'attr': {'class': 'form-control'}}) }}
             </div>
 
             <button type=\"submit\" class=\"btn btn-primary\">{{ button_label|default('Mettre à jour') }}</button>
@@ -209,6 +195,6 @@ class __TwigTemplate_61bb3d2cb441f50fef26c59d4d04afc0 extends Template
         <a href=\"{{ path('app_ouvrier_index') }}\" class=\"btn btn-secondary mt-3\">Retour à la liste</a>
     </div>
 {% endblock %}
-", "ouvrier/edit.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\ouvrier\\edit.html.twig");
+", "ouvrier/edit.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\ouvrier\\edit.html.twig");
     }
 }

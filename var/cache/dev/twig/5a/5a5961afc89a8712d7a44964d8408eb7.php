@@ -82,32 +82,34 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <div class=\"container\">
-        <h1 class=\"my-4\">Détails de l'Ouvrier</h1>
+        yield "    <div class=\"container mt-5\">
+        <h1 class=\"my-4 text-center text-primary\">Détails de l'Ouvrier</h1>
 
-        <table class=\"table\">
-            <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>";
-        // line 13
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 13, $this->source); })()), "id", [], "any", false, false, false, 13), "html", null, true);
+        <div class=\"card shadow-sm\">
+            <div class=\"card-body\">
+                <table class=\"table table-bordered table-hover\">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>";
+        // line 15
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15), "html", null, true);
         yield "</td>
-                </tr>
-                <tr>
-                    <th>Nom de l'Ouvrier</th>
-                    <td>";
-        // line 17
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 17, $this->source); })()), "nomOuvrier", [], "any", false, false, false, 17), "html", null, true);
-        yield "</td> <!-- Utilisation de la méthode getter -->
-                </tr>
-                <tr>
-                    <th>Compétence</th>
-                    <<td>
-    ";
-        // line 22
+                        </tr>
+                        <tr>
+                            <th>Nom de l'Ouvrier</th>
+                            <td>";
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 19, $this->source); })()), "nomOuvrier", [], "any", false, false, false, 19), "html", null, true);
+        yield "</td>
+                        </tr>
+                        <tr>
+                            <th>Compétence</th>
+                            <td>
+                                ";
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 22, $this->source); })()), "competences", [], "any", false, false, false, 22));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 24, $this->source); })()), "competences", [], "any", false, false, false, 24));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -123,14 +125,15 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["competence"]) {
-            // line 23
-            yield "        ";
+            // line 25
+            yield "                                    <span class=\"badge bg-info text-dark\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["competence"], "html", null, true);
-            if ( !CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 23)) {
+            yield "</span>";
+            if ( !CoreExtension::getAttribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 25)) {
                 yield ", ";
             }
-            // line 24
-            yield "    ";
+            // line 26
+            yield "                                ";
             $context['_iterated'] = true;
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -142,54 +145,50 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 25
-            yield "        Aucune compétence
-    ";
+            // line 27
+            yield "                                    <span class=\"badge bg-secondary\">Aucune compétence</span>
+                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['competence'], $context['_parent'], $context['_iterated'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 29
+        yield "                            </td>
+                        </tr>
+                        <tr>
+                            <th>Rôle</th>
+                            <td>";
+        // line 33
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 33, $this->source); })()), "role", [], "any", false, false, false, 33), "html", null, true);
         yield "</td>
+                        </tr>
+                        <tr>
+                            <th>Équipe</th>
+                            <td>";
+        // line 37
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["ouvrier"] ?? null), "equipe", [], "any", false, true, false, 37), "nom", [], "any", true, true, false, 37) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 37, $this->source); })()), "equipe", [], "any", false, false, false, 37), "nom", [], "any", false, false, false, 37)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 37, $this->source); })()), "equipe", [], "any", false, false, false, 37), "nom", [], "any", false, false, false, 37), "html", null, true)) : ("Aucune équipe"));
+        yield "</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                </tr>
-                <tr>
-                    <th>Rôle</th>
-                    <td>";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 32, $this->source); })()), "role", [], "any", false, false, false, 32), "html", null, true);
-        yield "</td>
-                </tr>
-                <tr>
-                    <th>Planning</th>
-                    <td>";
-        // line 36
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 36, $this->source); })()), "planning", [], "any", false, false, false, 36), "html", null, true);
-        yield "</td>
-                </tr>
-                <tr>
-                    <th>Équipe</th>
-                    <td>";
-        // line 40
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["ouvrier"] ?? null), "equipe", [], "any", false, true, false, 40), "nom", [], "any", true, true, false, 40) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 40, $this->source); })()), "equipe", [], "any", false, false, false, 40), "nom", [], "any", false, false, false, 40)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 40, $this->source); })()), "equipe", [], "any", false, false, false, 40), "nom", [], "any", false, false, false, 40), "html", null, true)) : ("Aucune équipe"));
-        yield "</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <a href=\"";
-        // line 45
+                <div class=\"d-flex justify-content-between mt-4\">
+                    <a href=\"";
+        // line 43
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_index");
         yield "\" class=\"btn btn-secondary\">Retour à la liste</a>
-        <a href=\"";
-        // line 46
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 46, $this->source); })()), "id", [], "any", false, false, false, 46)]), "html", null, true);
+                    <a href=\"";
+        // line 44
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ouvrier_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["ouvrier"]) || array_key_exists("ouvrier", $context) ? $context["ouvrier"] : (function () { throw new RuntimeError('Variable "ouvrier" does not exist.', 44, $this->source); })()), "id", [], "any", false, false, false, 44)]), "html", null, true);
         yield "\" class=\"btn btn-warning\">Modifier</a>
+                </div>
 
-        ";
-        // line 48
+                ";
+        // line 47
         yield Twig\Extension\CoreExtension::include($this->env, $context, "ouvrier/_delete_form.html.twig");
         yield "
+            </div>
+        </div>
     </div>
 ";
         
@@ -219,7 +218,7 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  191 => 48,  186 => 46,  182 => 45,  174 => 40,  167 => 36,  160 => 32,  153 => 27,  146 => 25,  133 => 24,  127 => 23,  109 => 22,  101 => 17,  94 => 13,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  188 => 47,  182 => 44,  178 => 43,  169 => 37,  162 => 33,  156 => 29,  149 => 27,  136 => 26,  129 => 25,  111 => 24,  103 => 19,  96 => 15,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -229,51 +228,52 @@ class __TwigTemplate_cf47f76eaa933ad0c5f35260510d7a41 extends Template
 {% block title %}Détails de l'Ouvrier{% endblock %}
 
 {% block body %}
-    <div class=\"container\">
-        <h1 class=\"my-4\">Détails de l'Ouvrier</h1>
+    <div class=\"container mt-5\">
+        <h1 class=\"my-4 text-center text-primary\">Détails de l'Ouvrier</h1>
 
-        <table class=\"table\">
-            <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>{{ ouvrier.id }}</td>
-                </tr>
-                <tr>
-                    <th>Nom de l'Ouvrier</th>
-                    <td>{{ ouvrier.nomOuvrier }}</td> <!-- Utilisation de la méthode getter -->
-                </tr>
-                <tr>
-                    <th>Compétence</th>
-                    <<td>
-    {% for competence in ouvrier.competences %}
-        {{ competence }}{% if not loop.last %}, {% endif %}
-    {% else %}
-        Aucune compétence
-    {% endfor %}
-</td>
+        <div class=\"card shadow-sm\">
+            <div class=\"card-body\">
+                <table class=\"table table-bordered table-hover\">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ ouvrier.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom de l'Ouvrier</th>
+                            <td>{{ ouvrier.nomOuvrier }}</td>
+                        </tr>
+                        <tr>
+                            <th>Compétence</th>
+                            <td>
+                                {% for competence in ouvrier.competences %}
+                                    <span class=\"badge bg-info text-dark\">{{ competence }}</span>{% if not loop.last %}, {% endif %}
+                                {% else %}
+                                    <span class=\"badge bg-secondary\">Aucune compétence</span>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Rôle</th>
+                            <td>{{ ouvrier.role }}</td>
+                        </tr>
+                        <tr>
+                            <th>Équipe</th>
+                            <td>{{ ouvrier.equipe.nom ?? 'Aucune équipe' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                </tr>
-                <tr>
-                    <th>Rôle</th>
-                    <td>{{ ouvrier.role }}</td>
-                </tr>
-                <tr>
-                    <th>Planning</th>
-                    <td>{{ ouvrier.planning }}</td>
-                </tr>
-                <tr>
-                    <th>Équipe</th>
-                    <td>{{ ouvrier.equipe.nom ?? 'Aucune équipe' }}</td>
-                </tr>
-            </tbody>
-        </table>
+                <div class=\"d-flex justify-content-between mt-4\">
+                    <a href=\"{{ path('app_ouvrier_index') }}\" class=\"btn btn-secondary\">Retour à la liste</a>
+                    <a href=\"{{ path('app_ouvrier_edit', {'id': ouvrier.id}) }}\" class=\"btn btn-warning\">Modifier</a>
+                </div>
 
-        <a href=\"{{ path('app_ouvrier_index') }}\" class=\"btn btn-secondary\">Retour à la liste</a>
-        <a href=\"{{ path('app_ouvrier_edit', {'id': ouvrier.id}) }}\" class=\"btn btn-warning\">Modifier</a>
-
-        {{ include('ouvrier/_delete_form.html.twig') }}
+                {{ include('ouvrier/_delete_form.html.twig') }}
+            </div>
+        </div>
     </div>
 {% endblock %}
-", "ouvrier/show.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\ouvrier\\show.html.twig");
+", "ouvrier/show.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\ouvrier\\show.html.twig");
     }
 }

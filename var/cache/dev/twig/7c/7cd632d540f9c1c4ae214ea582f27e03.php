@@ -210,6 +210,6 @@ class __TwigTemplate_a7270f7e9d210bda479f876ab0c2619d extends Template
 
     <a href=\"{{ path('app_affectation_new') }}\">Create new</a>
 {% endblock %}
-", "affectation/index.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\affectation\\index.html.twig");
+", "affectation/index.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\affectation\\index.html.twig");
     }
 }

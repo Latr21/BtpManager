@@ -70,12 +70,12 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
         yield "</head>
 <body>
     <!-- Navbar -->
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark shadow-sm\">
         <div class=\"container\">
             <a class=\"navbar-brand\" href=\"";
         // line 18
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\">Mon Application</a>
+        yield "\">BTP Manager</a>
             <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -112,7 +112,7 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
             // line 36
             yield "            <div class=\"alert alert-";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["label"], "html", null, true);
-            yield "\">
+            yield " alert-dismissible fade show\" role=\"alert\">
                 ";
             // line 37
             $context['_parent'] = $context;
@@ -128,30 +128,31 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
             unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 40
-            yield "            </div>
+            yield "                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+            </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['label'], $context['messages'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 43
         yield "    </div>
 
     <!-- Contenu principal -->
     <div class=\"container mt-4\">
         ";
-        // line 46
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 47
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 48
         yield "    </div>
 
     <!-- Bootstrap JS -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
 
     ";
-        // line 52
-        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
         // line 53
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        // line 54
         yield "</body>
 </html>
 ";
@@ -171,7 +172,7 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Mon Application";
+        yield "BTP Manager";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -194,7 +195,7 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
         yield from [];
     }
 
-    // line 46
+    // line 47
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -210,7 +211,7 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
         yield from [];
     }
 
-    // line 52
+    // line 53
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -247,7 +248,7 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  214 => 52,  198 => 46,  182 => 12,  165 => 6,  155 => 53,  153 => 52,  146 => 47,  144 => 46,  138 => 42,  131 => 40,  122 => 38,  118 => 37,  113 => 36,  109 => 35,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  77 => 18,  70 => 13,  68 => 12,  63 => 10,  56 => 6,  49 => 1,);
+        return array (  215 => 53,  199 => 47,  183 => 12,  166 => 6,  156 => 54,  154 => 53,  147 => 48,  145 => 47,  139 => 43,  131 => 40,  122 => 38,  118 => 37,  113 => 36,  109 => 35,  98 => 27,  94 => 26,  90 => 25,  86 => 24,  77 => 18,  70 => 13,  68 => 12,  63 => 10,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -257,7 +258,7 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
 <head>
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>{% block title %}Mon Application{% endblock %}</title>
+    <title>{% block title %}BTP Manager{% endblock %}</title>
 
     <!-- Bootstrap CSS -->
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">
@@ -267,9 +268,9 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
 </head>
 <body>
     <!-- Navbar -->
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark shadow-sm\">
         <div class=\"container\">
-            <a class=\"navbar-brand\" href=\"{{ path('app_home') }}\">Mon Application</a>
+            <a class=\"navbar-brand\" href=\"{{ path('app_home') }}\">BTP Manager</a>
             <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">
                 <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -287,10 +288,11 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
     <!-- Messages Flash -->
     <div class=\"container mt-3\">
         {% for label, messages in app.flashes %}
-            <div class=\"alert alert-{{ label }}\">
+            <div class=\"alert alert-{{ label }} alert-dismissible fade show\" role=\"alert\">
                 {% for message in messages %}
                     <p>{{ message }}</p>
                 {% endfor %}
+                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
             </div>
         {% endfor %}
     </div>
@@ -306,6 +308,6 @@ class __TwigTemplate_c54d5f1c4e7ad002bb2f3326d9058bba extends Template
     {% block javascripts %}{% endblock %}
 </body>
 </html>
-", "base.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\base.html.twig");
     }
 }

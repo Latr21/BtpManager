@@ -137,6 +137,6 @@ class __TwigTemplate_909b57e45499deef8a7b7873aeb41779 extends Template
 
     <a href=\"{{ path('app_affectation_index') }}\">back to list</a>
 {% endblock %}
-", "affectation/new.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\affectation\\new.html.twig");
+", "affectation/new.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\affectation\\new.html.twig");
     }
 }

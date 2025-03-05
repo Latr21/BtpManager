@@ -176,6 +176,6 @@ class __TwigTemplate_48ecb148d45b3194a00dac0c5a5124ee extends Template
 
     {{ include('affectation/_delete_form.html.twig') }}
 {% endblock %}
-", "affectation/show.html.twig", "C:\\Users\\mayac\\BtpManager\\templates\\affectation\\show.html.twig");
+", "affectation/show.html.twig", "C:\\Users\\helal\\BtpManager\\templates\\affectation\\show.html.twig");
     }
 }

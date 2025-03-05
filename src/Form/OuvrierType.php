@@ -54,14 +54,7 @@ class OuvrierType extends AbstractType
                 'attr' => ['class' => 'form-control'],
                 'placeholder' => 'Choisissez un rôle',
             ])
-
-            ->add('equipe', EntityType::class, [
-                'class' => Equipe::class,
-                'choice_label' => 'nom_equipe',
-                'placeholder' => 'Sélectionner une équipe',
-                'required' => false, // Rendre le champ non obligatoire
-                'attr' => ['class' => 'form-control'],
-            ]);
+;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
