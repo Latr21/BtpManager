@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250304103908 extends AbstractMigration
+final class Version20250305114057 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -23,7 +23,8 @@ final class Version20250304103908 extends AbstractMigration
         $this->addSql('CREATE TABLE affectation (id INT AUTO_INCREMENT NOT NULL, equipe_id INT NOT NULL, chantier_id INT NOT NULL, date_affectation DATE NOT NULL, INDEX IDX_F4DD61D36D861B89 (equipe_id), INDEX IDX_F4DD61D3D0C0049D (chantier_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE chantier (id INT AUTO_INCREMENT NOT NULL, chef_chantier_id INT DEFAULT NULL, equipe_id INT DEFAULT NULL, nom VARCHAR(255) NOT NULL, chantier_prerequis LONGTEXT DEFAULT NULL, effectif_requis INT NOT NULL, date_debut DATE NOT NULL, date_fin DATE NOT NULL, image VARCHAR(255) DEFAULT NULL, INDEX IDX_636F27F622456F8F (chef_chantier_id), INDEX IDX_636F27F66D861B89 (equipe_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE equipe (id INT AUTO_INCREMENT NOT NULL, chef_equipe_id INT DEFAULT NULL, nom_equipe VARCHAR(255) NOT NULL, competence_equipe VARCHAR(255) NOT NULL, nombre INT NOT NULL, INDEX IDX_2449BA15BEF74F87 (chef_equipe_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE ouvrier (id INT AUTO_INCREMENT NOT NULL, equipe_id INT DEFAULT NULL, nom_ouvrier VARCHAR(100) NOT NULL, competance VARCHAR(100) NOT NULL, role VARCHAR(100) NOT NULL, planning LONGTEXT DEFAULT NULL, INDEX IDX_ED5E7D256D861B89 (equipe_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE ouvrier (id INT AUTO_INCREMENT NOT NULL, equipe_id INT DEFAULT NULL, nom_ouvrier VARCHAR(100) NOT NULL, competences JSON NOT NULL COMMENT \'(DC2Type:json)\', role VARCHAR(50) NOT NULL, INDEX IDX_ED5E7D256D861B89 (equipe_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_IDENTIFIER_EMAIL (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE affectation ADD CONSTRAINT FK_F4DD61D36D861B89 FOREIGN KEY (equipe_id) REFERENCES equipe (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE affectation ADD CONSTRAINT FK_F4DD61D3D0C0049D FOREIGN KEY (chantier_id) REFERENCES chantier (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE chantier ADD CONSTRAINT FK_636F27F622456F8F FOREIGN KEY (chef_chantier_id) REFERENCES ouvrier (id) ON DELETE SET NULL');
@@ -45,5 +46,6 @@ final class Version20250304103908 extends AbstractMigration
         $this->addSql('DROP TABLE chantier');
         $this->addSql('DROP TABLE equipe');
         $this->addSql('DROP TABLE ouvrier');
+        $this->addSql('DROP TABLE user');
     }
 }
