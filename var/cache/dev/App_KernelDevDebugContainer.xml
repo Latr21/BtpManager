@@ -268,7 +268,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.VWJE6kt"/>
+      <argument type="service" id=".service_locator.pH3By2r"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1470,7 +1470,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.VWJE6kt"/>
+      <argument type="service" id=".service_locator.pH3By2r"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -3860,29 +3860,31 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.zHyJIs5" method="withContext"/>
     </service>
-    <service id=".service_locator.1Gptv_n" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Bg99Vwy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="affectationRepository" type="service_closure" id="App\Repository\AffectationRepository"/>
+        <argument key="chantierRepository" type="service_closure" id="App\Repository\ChantierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.1Gptv_n.App\Controller\AffectationController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Bg99Vwy.App\Controller\AffectationController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\AffectationController::index()"/>
       <argument>App\Controller\AffectationController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.1Gptv_n" method="withContext"/>
+      <factory service=".service_locator.Bg99Vwy" method="withContext"/>
     </service>
-    <service id=".service_locator.egipcEH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nUcpIEO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="chantierRepository" type="service_closure" id="App\Repository\ChantierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.egipcEH.App\Controller\AffectationController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nUcpIEO.App\Controller\AffectationController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\AffectationController::new()"/>
       <argument>App\Controller\AffectationController::new()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
+      <factory service=".service_locator.nUcpIEO" method="withContext"/>
     </service>
     <service id=".service_locator.4Vg_H9_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -3991,6 +3993,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.1Ipgx3N" method="withContext"/>
     </service>
+    <service id=".service_locator.egipcEH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.egipcEH.App\Controller\EquipeController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\EquipeController::new()"/>
       <argument>App\Controller\EquipeController::new()</argument>
@@ -4077,15 +4085,15 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0f_Qx9L" method="withContext"/>
     </service>
-    <service id=".service_locator.VWJE6kt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pH3By2r" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
-        <argument key="App\Controller\AffectationController::index" type="service_closure" id=".service_locator.1Gptv_n.App\Controller\AffectationController::index()"/>
-        <argument key="App\Controller\AffectationController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\AffectationController::new()"/>
+        <argument key="App\Controller\AffectationController::index" type="service_closure" id=".service_locator.Bg99Vwy.App\Controller\AffectationController::index()"/>
+        <argument key="App\Controller\AffectationController::new" type="service_closure" id=".service_locator.nUcpIEO.App\Controller\AffectationController::new()"/>
         <argument key="App\Controller\AffectationController::show" type="service_closure" id=".service_locator.4Vg_H9_.App\Controller\AffectationController::show()"/>
         <argument key="App\Controller\AffectationController::edit" type="service_closure" id=".service_locator.TgqcLbw.App\Controller\AffectationController::edit()"/>
         <argument key="App\Controller\AffectationController::delete" type="service_closure" id=".service_locator.TgqcLbw.App\Controller\AffectationController::delete()"/>
@@ -4106,8 +4114,8 @@
         <argument key="App\Controller\OuvrierController::delete" type="service_closure" id=".service_locator.0f_Qx9L.App\Controller\OuvrierController::delete()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
-        <argument key="App\Controller\AffectationController:index" type="service_closure" id=".service_locator.1Gptv_n.App\Controller\AffectationController::index()"/>
-        <argument key="App\Controller\AffectationController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\AffectationController::new()"/>
+        <argument key="App\Controller\AffectationController:index" type="service_closure" id=".service_locator.Bg99Vwy.App\Controller\AffectationController::index()"/>
+        <argument key="App\Controller\AffectationController:new" type="service_closure" id=".service_locator.nUcpIEO.App\Controller\AffectationController::new()"/>
         <argument key="App\Controller\AffectationController:show" type="service_closure" id=".service_locator.4Vg_H9_.App\Controller\AffectationController::show()"/>
         <argument key="App\Controller\AffectationController:edit" type="service_closure" id=".service_locator.TgqcLbw.App\Controller\AffectationController::edit()"/>
         <argument key="App\Controller\AffectationController:delete" type="service_closure" id=".service_locator.TgqcLbw.App\Controller\AffectationController::delete()"/>
@@ -5248,7 +5256,7 @@
     <service id="Twig\Environment" alias="twig"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VWJE6kt"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.pH3By2r"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
@@ -5260,8 +5268,8 @@
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.n_ENPtW" alias=".service_locator.zHyJIs5"/>
-    <service id=".service_locator.G7hffSo" alias=".service_locator.1Gptv_n"/>
-    <service id=".service_locator.5Vd5JYV" alias=".service_locator.egipcEH"/>
+    <service id=".service_locator.vh_CxKa" alias=".service_locator.Bg99Vwy"/>
+    <service id=".service_locator.t7ddgUJ" alias=".service_locator.nUcpIEO"/>
     <service id=".service_locator.JVsERsM" alias=".service_locator.4Vg_H9_"/>
     <service id=".service_locator.7qywP.5" alias=".service_locator.TgqcLbw"/>
     <service id=".service_locator.zUs.a91" alias=".service_locator.zmu.76o"/>
@@ -5270,6 +5278,7 @@
     <service id=".service_locator.vO1hIwD" alias=".service_locator.IB2bxtB"/>
     <service id=".service_locator.fqUaiqB" alias=".service_locator.JGvoi82"/>
     <service id=".service_locator.I68UHuf" alias=".service_locator.1Ipgx3N"/>
+    <service id=".service_locator.5Vd5JYV" alias=".service_locator.egipcEH"/>
     <service id=".service_locator.OjY0L.M" alias=".service_locator.0nXLR3y"/>
     <service id=".service_locator.r08Bwcf" alias=".service_locator.CbpT37N"/>
     <service id=".service_locator.z8_ehBY" alias=".service_locator.p1i6NoX"/>

@@ -5,7 +5,7 @@
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     'app_affectation_index' => [[], ['_controller' => 'App\\Controller\\AffectationController::index'], [], [['text', '/affectation']], [], [], []],
-    'app_affectation_new' => [[], ['_controller' => 'App\\Controller\\AffectationController::new'], [], [['text', '/affectation/new']], [], [], []],
+    'app_affectation_new' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::new'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation/new']], [], [], []],
     'app_affectation_show' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],
     'app_affectation_edit' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],
     'app_affectation_delete' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],
@@ -25,7 +25,7 @@ return [
     'app_ouvrier_edit' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
     'app_ouvrier_delete' => [['id'], ['_controller' => 'App\\Controller\\OuvrierController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ouvrier']], [], [], []],
     'App\Controller\AffectationController::index' => [[], ['_controller' => 'App\\Controller\\AffectationController::index'], [], [['text', '/affectation']], [], [], []],
-    'App\Controller\AffectationController::new' => [[], ['_controller' => 'App\\Controller\\AffectationController::new'], [], [['text', '/affectation/new']], [], [], []],
+    'App\Controller\AffectationController::new' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::new'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation/new']], [], [], []],
     'App\Controller\AffectationController::show' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],
     'App\Controller\AffectationController::edit' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],
     'App\Controller\AffectationController::delete' => [['id'], ['_controller' => 'App\\Controller\\AffectationController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/affectation']], [], [], []],

@@ -33,12 +33,19 @@ class AffectationType extends AbstractType
             ])
             ->add('chantier', EntityType::class, [
                 'class' => Chantier::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
+                'attr' => ['class' => 'form-control'],
+                'disabled' => true,
             ])
-            ->add('equipe', EntityType::class, [  // Nouveau champ ajouté
+            ->add('equipe', EntityType::class, [
                 'class' => Equipe::class,
-                'choice_label' => 'nom_equipe',  // Modifier selon l'attribut que vous voulez afficher
+                'choice_label' => function(Equipe $equipe) {
+                    return $equipe->getNomEquipe() . ' - ' . "\n" . 'Compétence : ' . $equipe->getCompetanceEquipe() . "\n" . ' - Nombre : ' . $equipe->getNombre();
+                },
+                'multiple' => false,
+                'expanded' => true,
             ])
+            
         ;
     }
     

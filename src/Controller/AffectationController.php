@@ -10,22 +10,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Entity\Chantier;
+use App\Repository\ChantierRepository;
 
 #[Route('/affectation')]
 final class AffectationController extends AbstractController
 {
     #[Route(name: 'app_affectation_index', methods: ['GET'])]
-    public function index(AffectationRepository $affectationRepository): Response
+    public function index(AffectationRepository $affectationRepository, ChantierRepository $chantierRepository): Response
     {
         return $this->render('affectation/index.html.twig', [
             'affectations' => $affectationRepository->findAll(),
+            'chantiers' => $chantierRepository->findAll(),
         ]);
     }
+    
 
-    #[Route('/new', name: 'app_affectation_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/new/{id}', name: 'app_affectation_new', methods: ['GET', 'POST'])]
+    public function new(Request $request, EntityManagerInterface $entityManager, ChantierRepository $chantierRepository, ?Chantier $chantier): Response
     {
+        $chantierId = $request->attributes->get('id');
+        $chantier = $chantierId ? $chantierRepository->find($chantierId) : null;
+
         $affectation = new Affectation();
+
+        if ($chantier) {
+            $affectation->setChantier($chantier);
+        }
+
         $form = $this->createForm(AffectationType::class, $affectation);
         $form->handleRequest($request);
 
