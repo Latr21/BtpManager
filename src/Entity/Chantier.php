@@ -35,9 +35,7 @@ class Chantier
     #[ORM\JoinColumn(onDelete: "SET NULL")]
     private ?Ouvrier $chef_chantier = null;
 
-    #[ORM\ManyToOne(targetEntity: Equipe::class, inversedBy: "chantiers")]
-    #[ORM\JoinColumn(onDelete: "SET NULL")]
-    private ?Equipe $equipe = null;
+   
 
     #[ORM\OneToMany(mappedBy: 'chantier', targetEntity: Affectation::class, orphanRemoval: true)]
     private Collection $affectations;
@@ -111,17 +109,7 @@ class Chantier
         return $this;
     }
 
-    public function getEquipe(): ?Equipe
-    {
-        return $this->equipe;
-    }
-
-    public function setEquipe(?Equipe $equipe): static
-    {
-        $this->equipe = $equipe;
-
-        return $this;
-    }
+ 
 
     /**
      * @return Collection<int, Affectation>

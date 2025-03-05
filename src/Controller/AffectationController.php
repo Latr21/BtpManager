@@ -12,8 +12,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Entity\Chantier;
 use App\Repository\ChantierRepository;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/affectation')]
+#[IsGranted('IS_AUTHENTICATED_FULLY')]
+
 final class AffectationController extends AbstractController
 {
     #[Route(name: 'app_affectation_index', methods: ['GET'])]

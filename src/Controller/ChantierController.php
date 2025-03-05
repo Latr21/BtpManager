@@ -13,8 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/chantier')]
+#[IsGranted('IS_AUTHENTICATED_FULLY')]
+
 class ChantierController extends AbstractController
 {
     #[Route('/', name: 'app_chantier_index', methods: ['GET'])]
