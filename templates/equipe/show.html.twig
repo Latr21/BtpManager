@@ -23,10 +23,9 @@
                             <td>{{ equipe.nombre }}</td>
                         </tr>
                         <tr>
-                        <th scope="row">Chef d'équipe</th>
+                            <th scope="row">Chef d'équipe</th>
                             <td>{{ equipe.chefEquipe ? equipe.chefEquipe.nomOuvrier : 'Aucun' }}</td>
                         </tr>
-                        
                     </tbody>
                 </table>
 
@@ -41,10 +40,12 @@
                     </thead>
                     <tbody>
                         {% for ouvrier in equipe.ouvriers %}
-                            <tr>
-                                <td>{{ ouvrier.nomOuvrier }}</td>
-                                <td>{{ ouvrier.competance }}</td>
-                            </tr>
+                            {% if ouvrier.role == 'Ouvrier' %}
+                                <tr>
+                                    <td>{{ ouvrier.nomOuvrier }}</td>
+                                    <td>{{ ouvrier.competences[0] is defined ? ouvrier.competences[0] : 'Aucune compétence' }}</td>
+                                </tr>
+                            {% endif %}
                         {% else %}
                             <tr>
                                 <td colspan="3" class="text-center">Aucun ouvrier associé à cette équipe</td>

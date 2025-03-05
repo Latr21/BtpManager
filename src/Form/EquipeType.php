@@ -19,11 +19,16 @@ class EquipeType extends AbstractType
             ->add('competance_equipe')
             ->add('ouvriers', EntityType::class, [
                 'class' => Ouvrier::class,
-                'choice_label' => 'nom_ouvrier',  
+                'choice_label' => 'nom_ouvrier',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('o')
+                        ->where('o.role = :role')
+                        ->setParameter('role', 'Ouvrier');
+                },  
                 'multiple' => true,               
                 'expanded' => true,               
             ])
-            ->add('nombre')
+            // ->add('nombre')
             ->add('chef_equipe', EntityType::class, [
                 'class' => Ouvrier::class,
                 'choice_label' => 'nom_ouvrier',  
