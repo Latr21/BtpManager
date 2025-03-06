@@ -11,8 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/ouvrier')]
+#[IsGranted('IS_AUTHENTICATED_FULLY')]
+
 final class OuvrierController extends AbstractController
 {
     #[Route('/', name: 'app_ouvrier_index', methods: ['GET'])]
