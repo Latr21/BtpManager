@@ -17,6 +17,8 @@
                         <h4 class="card-title text-primary">{{ chantier.nom }}</h4>
                         <p class="text-muted">
                             <i class="fas fa-users"></i> Effectif requis : <strong>{{ chantier.effectifRequis }}</strong>
+                            Effectif restant :  <strong>{{ chantier.getEffectifRestant() == 0 ? 'Complet' : chantier.getEffectifRestant() }}</strong>
+
                         </p>
                         <p>
                             📅 Début : <strong>{{ chantier.dateDebut ? chantier.dateDebut|date('d/m/Y') : '-' }}</strong><br>
@@ -49,6 +51,7 @@
                         <h4 class="card-title text-primary">{{ affectation.nom }}</h4>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><strong>Equipe :</strong> {{ affectation.equipe.nomEquipe }}</li>
+                            <li class="list-group-item"><strong>Nombre :</strong> {{ affectation.equipe.nombre }}</li>
                             <li class="list-group-item"><strong>Chantier :</strong> {{ affectation.chantier.nom }}</li>
                             <li class="list-group-item"><strong>Date de Début :</strong> {{ affectation.dateDebut ? affectation.dateDebut|date('d/m/Y') : '-' }}</li>
                             <li class="list-group-item"><strong>Date de Fin :</strong> {{ affectation.dateFin ? affectation.dateFin|date('d/m/Y') : '-' }}</li>

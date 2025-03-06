@@ -16,7 +16,7 @@
                     <div class="card mb-4 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">{{ equipe.nomEquipe }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Compétence : {{ equipe.competanceEquipe }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Compétence : {{ equipe.competanceEquipe|join(', ') }}</h6>
                             <p class="card-text"><strong>Membres :</strong> {{ equipe.nombre }}</p>
                             <p class="card-text">
                                 <strong>Chef :</strong> {{ equipe.chefEquipe ? equipe.chefEquipe.nomOuvrier : 'Aucun' }}

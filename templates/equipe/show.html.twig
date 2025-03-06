@@ -15,9 +15,12 @@
                             <td>{{ equipe.nomEquipe }}</td>
                         </tr>
                         <tr>
-                            <th scope="row">Compétence de l'équipe</th>
-                            <td>{{ equipe.competanceEquipe }}</td>
+                            <th scope="row">Compétences de l'équipe</th>
+                            <td>
+                                {{ equipe.competanceEquipe is iterable ? equipe.competanceEquipe|join(', ') : equipe.competanceEquipe }}
+                            </td>
                         </tr>
+
                         <tr>
                             <th scope="row">Nombre d'ouvriers</th>
                             <td>{{ equipe.nombre }}</td>

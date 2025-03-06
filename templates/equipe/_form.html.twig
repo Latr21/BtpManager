@@ -6,7 +6,16 @@
     
     <div class="mb-3">
         {{ form_label(form.competance_equipe) }}
-        {{ form_widget(form.competance_equipe, {'attr': {'class': 'form-control'}}) }}
+        <div class="row">
+            {% for competance in form.competance_equipe %}
+                <div class="col-md-4">
+                    <div class="form-check">
+                        {{ form_widget(competance, {'attr': {'class': 'form-check-input'}}) }}
+                        {{ form_label(competance, null, {'attr': {'class': 'form-check-label'}}) }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="mb-3">
@@ -14,21 +23,19 @@
         {{ form_widget(form.chef_equipe, {'attr': {'class': 'form-control'}}) }}
     </div>
 
-    <!-- Ajouter un champ pour sélectionner plusieurs ouvriers -->
     <div class="mb-3">
-    {{ form_label(form.ouvriers) }}
-    <div class="row">
-        {% for ouvrier in form.ouvriers %}
-            <div class="col-md-4">
-                <div class="form-check">
-                    {{ form_widget(ouvrier, {'attr': {'class': 'form-check-input'}}) }}
-                    {{ form_label(ouvrier, null, {'attr': {'class': 'form-check-label'}}) }}
+        {{ form_label(form.ouvriers) }}
+        <div class="row">
+            {% for ouvrier in form.ouvriers %}
+                <div class="col-md-4">
+                    <div class="form-check">
+                        {{ form_widget(ouvrier, {'attr': {'class': 'form-check-input'}}) }}
+                        {{ form_label(ouvrier, null, {'attr': {'class': 'form-check-label'}}) }}
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
-
 
     <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

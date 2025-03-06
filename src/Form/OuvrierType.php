@@ -1,14 +1,12 @@
 <?php
+
 namespace App\Form;
 
-use App\Entity\Equipe;
 use App\Entity\Ouvrier;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class OuvrierType extends AbstractType
 {
@@ -39,11 +37,12 @@ class OuvrierType extends AbstractType
                     'Solier-moquettiste' => 'Solier-moquettiste',
                     'Staffeur-Ornemaniste' => 'Staffeur-Ornemaniste',
                 ],
-                'expanded' => false, // Affiche sous forme de menu déroulant
-                'multiple' => true, // Permet de sélectionner plusieurs compétences
-                'attr' => ['class' => 'form-control select-competences'],
-                'placeholder' => 'Sélectionnez les compétences',
-            ])
+                'multiple' => true, // Permet de cocher plusieurs choix
+                'expanded' => true, // Affiche les options sous forme de cases à cocher
+                'placeholder' => 'Sélectionnez les compétences prérequises',
+                'required' => true,
+                'attr' => ['class' => 'form-check']
+                ])
             ->add('role', ChoiceType::class, [
                 'choices' => [
                     'Ouvrier' => 'Ouvrier',

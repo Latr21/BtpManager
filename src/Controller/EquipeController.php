@@ -31,37 +31,38 @@ final class EquipeController extends AbstractController
         $equipe = new Equipe();
         $form = $this->createForm(EquipeType::class, $equipe);
         $form->handleRequest($request);
-    
+
         if ($form->isSubmitted() && $form->isValid()) {
+            $competances = $form->get('competance_equipe')->getData();
+            $equipe->setCompetanceEquipe($competances);
+
             $ouvriers = $form->get('ouvriers')->getData();
-            
             $equipe->setNombre(count($ouvriers));
-    
+
             $entityManager->persist($equipe);
-            $entityManager->flush();
-    
+
             foreach ($ouvriers as $ouvrier) {
                 $ouvrier->setEquipe($equipe);
                 $entityManager->persist($ouvrier);
             }
-    
+
             if ($equipe->getChefEquipe()) {
                 $chef = $equipe->getChefEquipe();
                 $chef->setEquipe($equipe);
                 $entityManager->persist($chef);
             }
-    
+
             $entityManager->flush();
-    
+
             return $this->redirectToRoute('app_equipe_index', [], Response::HTTP_SEE_OTHER);
         }
-    
+
         return $this->render('equipe/new.html.twig', [
             'equipe' => $equipe,
             'form' => $form->createView(),
         ]);
     }
-    
+
     #[Route('/{id}', name: 'app_equipe_show', methods: ['GET'])]
     public function show(Equipe $equipe): Response
     {
@@ -77,6 +78,9 @@ final class EquipeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $competances = $form->get('competance_equipe')->getData();
+            $equipe->setCompetanceEquipe($competances);
+
             $ouvriers = $form->get('ouvriers')->getData();
             $equipe->setNombre(count($ouvriers));
 
@@ -94,7 +98,6 @@ final class EquipeController extends AbstractController
     #[Route('/{id}', name: 'app_equipe_delete', methods: ['POST'])]
     public function delete(Request $request, Equipe $equipe, EntityManagerInterface $entityManager): Response
     {
-        // Vérifier le token CSRF
         if ($this->isCsrfTokenValid('delete'.$equipe->getId(), $request->request->get('_token'))) {
             $entityManager->remove($equipe);
             $entityManager->flush();

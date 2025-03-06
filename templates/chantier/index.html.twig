@@ -31,7 +31,9 @@
                     <div class="card-body">
                         <h5 class="card-title text-primary">{{ chantier.nom }}</h5>
                         <p class="text-muted">
-                            <i class="fas fa-users"></i> Effectif requis : <strong>{{ chantier.effectifRequis }}</strong>
+                            <i class="fas fa-users"></i> Effectif requis : <strong>{{ chantier.effectifRequis }}</strong> <br>
+                            Effectif restant :  <strong>{{ chantier.getEffectifRestant() == 0 ? 'Complet' : chantier.getEffectifRestant() }}</strong>
+
                         </p>
                         <p>
                             📅 Début : <strong>{{ chantier.dateDebut ? chantier.dateDebut|date('d/m/Y') : '-' }}</strong><br>

@@ -18,8 +18,9 @@ class Equipe
     #[ORM\Column(length: 255)]
     private ?string $nom_equipe = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $competance_equipe = null;
+    // Utiliser un tableau pour les compétences
+    #[ORM\Column(type: "json")]
+    private array $competance_equipe = []; // Cela stockera un tableau JSON dans la base de données
 
     #[ORM\Column]
     private ?int $nombre = null;
@@ -41,11 +42,17 @@ class Equipe
     }
 
     public function getId(): ?int { return $this->id; }
+
     public function getNomEquipe(): ?string { return $this->nom_equipe; }
     public function setNomEquipe(string $nom_equipe): static { $this->nom_equipe = $nom_equipe; return $this; }
 
-    public function getCompetanceEquipe(): ?string { return $this->competance_equipe; }
-    public function setCompetanceEquipe(string $competance_equipe): static { $this->competance_equipe = $competance_equipe; return $this; }
+    // Getter et Setter pour competance_equipe
+    public function getCompetanceEquipe(): array { return $this->competance_equipe; }
+
+    public function setCompetanceEquipe(array $competance_equipe): static { 
+        $this->competance_equipe = $competance_equipe; 
+        return $this; 
+    }
 
     public function getNombre(): ?int { return $this->nombre; }
     public function setNombre(int $nombre): static { $this->nombre = $nombre; return $this; }
@@ -57,6 +64,7 @@ class Equipe
      * @return Collection<int, Ouvrier>
      */
     public function getOuvriers(): Collection { return $this->ouvriers; }
+
     public function addOuvrier(Ouvrier $ouvrier): static 
     {
         if (!$this->ouvriers->contains($ouvrier)) {
@@ -65,6 +73,7 @@ class Equipe
         }
         return $this;
     }
+
     public function removeOuvrier(Ouvrier $ouvrier): static 
     {
         if ($this->ouvriers->removeElement($ouvrier) && $ouvrier->getEquipe() === $this) {
@@ -77,6 +86,7 @@ class Equipe
      * @return Collection<int, Chantier>
      */
     public function getChantiers(): Collection { return $this->chantiers; }
+
     public function addChantier(Chantier $chantier): static 
     {
         if (!$this->chantiers->contains($chantier)) {
@@ -85,6 +95,7 @@ class Equipe
         }
         return $this;
     }
+
     public function removeChantier(Chantier $chantier): static 
     {
         if ($this->chantiers->removeElement($chantier) && $chantier->getEquipe() === $this) {

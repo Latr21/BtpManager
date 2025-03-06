@@ -3,26 +3,17 @@
 {% block title %}Modifier un Ouvrier{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="my-4 text-primary">Modifier un Ouvrier</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Modifier un Ouvrier</h1>
 
-        {{ form_start(form) }}
-            <div class="mb-3">
-                {{ form_label(form.nom_ouvrier, 'Nom de l\'Ouvrier') }}
-                {{ form_widget(form.nom_ouvrier, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le nom de l\'ouvrier'}}) }}
+        <div class="card">
+            <div class="card-body">
+                {{ include('ouvrier/_form.html.twig') }}
             </div>
-            <div class="mb-3">
-                {{ form_label(form.competences, 'Compétence') }}
-                {{ form_widget(form.competences, {'attr': {'class': 'form-control', 'placeholder': 'Entrez la compétence'}}) }}
-            </div>
-            <div class="mb-3">
-                {{ form_label(form.role, 'Rôle') }}
-                {{ form_widget(form.role, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le rôle'}}) }}
-            </div>
+        </div>
 
-            <button type="submit" class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
-        {{ form_end(form) }}
-
-        <a href="{{ path('app_ouvrier_index') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+        <div class="mt-3">
+            <a href="{{ path('app_ouvrier_index') }}" class="btn btn-secondary">Retour à la liste</a>
+        </div>
     </div>
 {% endblock %}

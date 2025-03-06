@@ -44,7 +44,8 @@ class AffectationType extends AbstractType
             ->add('equipe', EntityType::class, [
                 'class' => Equipe::class,
                 'choice_label' => function(Equipe $equipe) {
-                    return $equipe->getNomEquipe() . ' - ' . "\n" . 'Compétence : ' . $equipe->getCompetanceEquipe() . "\n" . ' - Nombre : ' . $equipe->getNombre();
+                    // On affiche le nom, les compétences (joinées) et le nombre d'ouvriers
+                    return $equipe->getNomEquipe() . ' - Compétences : ' . implode(', ', $equipe->getCompetanceEquipe()) . ' - Nombre : ' . $equipe->getNombre();
                 },
                 'multiple' => false,
                 'expanded' => true,
@@ -65,6 +66,16 @@ class AffectationType extends AbstractType
             
             if ($effectifEquipe != $effectifRequis) {
                 $context->buildViolation('Le nombre d\'effectif de l\'équipe doit être égal au nombre d\'effectif requis du chantier.')
+                    ->atPath('equipe')
+                    ->addViolation();
+            }
+            
+            
+            $competencesRequises = $chantier->getChantierPrerequis(); 
+            $competencesEquipe = $value->getCompetanceEquipe(); 
+
+            if (empty($competencesEquipe) || empty(array_intersect($competencesRequises, $competencesEquipe))) {
+                $context->buildViolation('L\'équipe doit posséder au moins une des compétences requises du chantier.')
                     ->atPath('equipe')
                     ->addViolation();
             }
