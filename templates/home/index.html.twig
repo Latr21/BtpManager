@@ -5,29 +5,62 @@
 {% block stylesheets %}
 <style>
     .hero {
-        background: url('https://source.unsplash.com/1600x900/?construction,team') no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?construction,team') no-repeat center center;
         background-size: cover;
         color: white;
         text-align: center;
-        padding: 120px 20px;
-        margin-bottom: 30px;
+        padding: 150px 20px;
+        margin-bottom: 40px;
         border-radius: 10px;
     }
     .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: bold;
     }
+    .hero p {
+        font-size: 1.3rem;
+        opacity: 0.9;
+    }
     .card {
-        transition: transform 0.3s ease-in-out;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        color: white;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        padding: 50px 20px;
+        height: 100%;
     }
     .card:hover {
-        transform: scale(1.05);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
     }
     .card-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    .card-text {
         font-size: 1.2rem;
-        font-weight: 600;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+    .card i {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    .btn-custom {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border-radius: 50px;
     }
 </style>
 {% endblock %}
@@ -42,43 +75,26 @@
 </header>
 
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-3 mb-4">
-            <div class="card text-center shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Équipes</h5>
-                    <p class="card-text">Gérez les équipes travaillant sur vos projets.</p>
-                    <a href="{{ path('app_equipe_index') }}" class="btn btn-primary w-100">Voir</a>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% set sections = [
+            {'title': 'Équipes', 'text': 'Gérez les équipes travaillant sur vos projets.', 'route': 'app_equipe_index', 'icon': 'fas fa-users'},
+            {'title': 'Chantiers', 'text': 'Consultez la liste des chantiers en cours.', 'route': 'app_chantier_index', 'icon': 'fas fa-hard-hat'},
+            {'title': 'Affectations', 'text': 'Suivez les affectations de vos ouvriers.', 'route': 'app_affectation_index', 'icon': 'fas fa-tasks'},
+            {'title': 'Ouvriers', 'text': 'Gérez vos ouvriers et leurs compétences.', 'route': 'app_ouvrier_index', 'icon': 'fas fa-user-cog'}
+        ] %}
+
+        {% for section in sections %}
+            <div class="col">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <i class="{{ section.icon }}"></i>
+                        <h5 class="card-title">{{ section.title }}</h5>
+                        <p class="card-text">{{ section.text }}</p>
+                        <a href="{{ path(section.route) }}" class="btn btn-light btn-custom">Voir</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 mb-4">
-            <div class="card text-center shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Chantiers</h5>
-                    <p class="card-text">Consultez la liste des chantiers en cours.</p>
-                    <a href="{{ path('app_chantier_index') }}" class="btn btn-primary w-100">Voir</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mb-4">
-            <div class="card text-center shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Affectations</h5>
-                    <p class="card-text">Suivez les affectations de vos ouvriers.</p>
-                    <a href="{{ path('app_affectation_index') }}" class="btn btn-primary w-100">Voir</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mb-4">
-            <div class="card text-center shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Ouvriers</h5>
-                    <p class="card-text">Gérez vos ouvriers et leurs compétences.</p>
-                    <a href="{{ path('app_ouvrier_index') }}" class="btn btn-primary w-100">Voir</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
