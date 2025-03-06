@@ -151,7 +151,16 @@ class Chantier
         return $this;
     }
 
-   
+    public function getEquipe(): ?Equipe
+    {
+        return $this->equipe;
+    }
+    
+    public function setEquipe(?Equipe $equipe): static
+    {
+        $this->equipe = $equipe;
+        return $this;
+    }
 
    
 }

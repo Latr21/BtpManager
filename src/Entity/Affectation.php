@@ -32,7 +32,20 @@ class Affectation
 
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $nom = null;
-
+    #[ORM\ManyToOne(targetEntity: Ouvrier::class, inversedBy: "affectations")]
+    #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
+    private ?Ouvrier $ouvrier = null;
+    
+    public function getOuvrier(): ?Ouvrier
+    {
+        return $this->ouvrier;
+    }
+    
+    public function setOuvrier(?Ouvrier $ouvrier): static
+    {
+        $this->ouvrier = $ouvrier;
+        return $this;
+    }
     public function getId(): ?int 
     { 
         return $this->id; 
